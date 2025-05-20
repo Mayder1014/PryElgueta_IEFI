@@ -1,0 +1,23 @@
+CREATE DATABASE Trabajo;
+
+USE Trabajo;
+
+CREATE TABLE Usuarios (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Usuario NVARCHAR(50) NOT NULL UNIQUE,
+    Contraseña NVARCHAR(12) NOT NULL CHECK (LEN(Contraseña) BETWEEN 1 AND 12),
+    Permiso INT NOT NULL DEFAULT 1,
+    FechaActualConexion DATETIME NULL,
+	FechaUltimaConexion DATETIME NULL,
+	TiempoUltimaSesion TIME(0) NULL, --Almacena HH:MM:SS
+	TiempoTotal TIME(0) NULL
+);
+
+INSERT INTO Usuarios (Usuario, Contraseña, Permiso, FechaActualConexion, FechaUltimaConexion, TiempoUltimaSesion, TiempoTotal)
+VALUES
+('admin', 'admin', 1, GETDATE(), GETDATE(), '00:00:00', '00:00:00'),
+('Mayder', 'facundo', 1, GETDATE(), GETDATE(), '00:00:00','00:00:00'),
+('Arcorax', 'mariano', 1, GETDATE(), GETDATE(), '00:00:00','00:00:00'),
+('alumno1', 'abcd1', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00'),
+('alumno2', 'abcd2', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00'),
+('alumno3', 'abcd3', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00');

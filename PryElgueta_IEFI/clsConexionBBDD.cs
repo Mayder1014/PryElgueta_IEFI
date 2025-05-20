@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace PryElgueta_IEFI
 {
     internal class clsConexionBBDD
     {
-        string cadenaConexion = "Server=localhost;Database=Usuarios;Trusted_Connection=True;";
+        string cadenaConexion = "Server=localhost;Database=Trabajo;Trusted_Connection=True;";
 
         //conector
         SqlConnection conexionBaseDatos;
@@ -21,43 +22,32 @@ namespace PryElgueta_IEFI
 
         public string nombreBaseDeDatos;
 
-
-
-
-        public void cargarLista()
-        {
-
-        }
-
         public void cargarLista(clsUsuarios lista)
         {
             try
             {
                 conexionBaseDatos = new SqlConnection(cadenaConexion);
-
                 conexionBaseDatos.Open();
 
                 string query = "SELECT * FROM Usuarios";
                 comandoBaseDatos = new SqlCommand(query, conexionBaseDatos);
 
-                //Crear un DataTable
-                DataTable tablaProductos = new DataTable();
-
-                //Llenar el DataTable
                 using (SqlDataReader reader = comandoBaseDatos.ExecuteReader())
                 {
-                    tablaProductos.Load(reader);
-                }
-
-                //Empieza a llenar la lista con los valores correspondientes de un producto fila por fila.
-                foreach (DataRow fila in tablaProductos.Rows)
-                {
-                    
-
-                    clsUsuario user = new clsUsuario(Convert.ToInt32(fila[0]), fila[1].ToString(), fila[2].ToString(),
-                        Convert.ToInt32(fila[3]), Convert.ToDateTime(fila[4]), Convert.ToDateTime(fila[5]), (TimeSpan)fila[6], (TimeSpan)fila[7]);
-
-                    lista.lstUsuarios.Add(user);
+                    while (reader.Read())
+                    {
+                        clsUsuario user = new clsUsuario(
+                            reader.GetInt32(0),       // Id
+                            reader.GetString(1),      // Usuario
+                            reader.GetString(2),      // Contraseña
+                            reader.GetInt32(3),       // Permiso
+                            reader.GetDateTime(4),    // FechaActualConexion
+                            reader.GetDateTime(5),    // FechaUltimaConexion
+                            reader.GetTimeSpan(6),    // TiempoUltimaSesion
+                            reader.GetTimeSpan(7)     // TiempoTotal
+                        );
+                        lista.lstUsuarios.Add(user);
+                    }
                 }
             }
             catch (Exception ex)
@@ -69,6 +59,44 @@ namespace PryElgueta_IEFI
                 conexionBaseDatos.Close();
             }
         }
+
+        public void actualizarUsuario(clsUsuario usuario)
+        {
+            try
+            {
+                conexionBaseDatos = new SqlConnection(cadenaConexion);
+
+                nombreBaseDeDatos = conexionBaseDatos.Database;
+
+                conexionBaseDatos.Open();
+
+                string updateQuery = "UPDATE Usuarios SET Usuario = @usuario, Contraseña = @contraseña, " +
+                    "Permiso = @permiso, FechaActualConexion = @actConexion, FechaUltimaConexion = @ultConexion, " +
+                    "TiempoUltimaSesion = @ultSesion, TiempoTotal = @totalSesion WHERE Id = @id";
+                SqlCommand cmd = new SqlCommand(updateQuery, conexionBaseDatos);
+
+                cmd.Parameters.AddWithValue("@id", usuario.id);
+                cmd.Parameters.AddWithValue("@usuario", usuario.usuario);
+                cmd.Parameters.AddWithValue("@contraseña", usuario.contraseña);
+                cmd.Parameters.AddWithValue("@permiso", usuario.permiso);
+                cmd.Parameters.AddWithValue("@actConexion", usuario.fechaActualConexion);
+                cmd.Parameters.AddWithValue("@ultConexion", usuario.fechaUltimaConexion);
+                cmd.Parameters.AddWithValue("@ultSesion", usuario.tiempoUltSesion);
+                cmd.Parameters.AddWithValue("@totalSesion", usuario.tiempoTotal);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexionBaseDatos.Close();
+            }
+        }
+
+
 
     }
 }

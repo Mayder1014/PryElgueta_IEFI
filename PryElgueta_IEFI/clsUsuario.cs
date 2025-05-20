@@ -17,6 +17,8 @@ namespace PryElgueta_IEFI
         public TimeSpan tiempoUltSesion { get; set; }
         public TimeSpan tiempoTotal { get; set; }
 
+        static public clsUsuario usuarioLogueado { get; set; }
+
         public clsUsuario(int id, string usuario, string contraseña, int permiso, DateTime fechaActualConexion,
             DateTime fechaUltimaConexion, TimeSpan tiempoUltSesion, TimeSpan tiempoTotal)
         {
