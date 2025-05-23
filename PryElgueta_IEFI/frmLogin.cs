@@ -24,7 +24,7 @@ namespace PryElgueta_IEFI
         {
             txtContraseña.UseSystemPasswordChar = true;
 
-            conexion.cargarLista(lstUsuarios);
+            conexion.cargarListaUsuarios(lstUsuarios);
         }
 
         private void btnMostrarOcultar_Click(object sender, EventArgs e)
@@ -51,13 +51,17 @@ namespace PryElgueta_IEFI
             if (clsUsuario.usuarioLogueado != null)
             {
                 MessageBox.Show($"¡Bienvenido {clsUsuario.usuarioLogueado.usuario}!", "LOGIN EXITOSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string evento = "Login"; //Tipo de evento a registrar
 
-                clsUsuario.usuarioLogueado.fechaActualConexion = DateTime.Now;
-                
+
                 frmPrincipal.formPrincipal.Show();
                 frmPrincipal.timerS.Enabled = true;
                 frmPrincipal.mostrarUsuario.Text = clsUsuario.usuarioLogueado.usuario.ToString();
-                frmPrincipal.mostrarFecha.Text = clsUsuario.usuarioLogueado.fechaActualConexion.ToString();
+                frmPrincipal.mostrarFecha.Text = DateTime.Now.ToString();
+
+                clsRegistro registro = new clsRegistro(0, clsUsuario.usuarioLogueado.id, evento, DateTime.Now, "Descripcion");
+
+                conexion.registrarEnAuditoria(registro); //Se registra el evento en Auditoria.
 
                 this.Close();
 
@@ -83,5 +87,8 @@ namespace PryElgueta_IEFI
             }
         }
         #endregion
+
+        
+
     }
 }

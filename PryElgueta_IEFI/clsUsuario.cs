@@ -12,24 +12,26 @@ namespace PryElgueta_IEFI
         public string usuario { get; set; }
         public string contraseña { get; set; }
         public int permiso { get; set; }
-        public DateTime fechaActualConexion { get; set; }
-        public DateTime fechaUltimaConexion { get; set; }
-        public TimeSpan tiempoUltSesion { get; set; }
-        public TimeSpan tiempoTotal { get; set; }
+        public DateTime fechaCreacion { get; set; }
+        public DateTime ultimaConexion { get; set; }
+        public TimeSpan ultimoTiempoTrabajo { get; set; }
+        public TimeSpan tiempoTrabajoTotal { get; set; }
+        public int activo { get; set; }
 
         static public clsUsuario usuarioLogueado { get; set; }
 
-        public clsUsuario(int id, string usuario, string contraseña, int permiso, DateTime fechaActualConexion,
-            DateTime fechaUltimaConexion, TimeSpan tiempoUltSesion, TimeSpan tiempoTotal)
+        public clsUsuario(int id, string usuario, string contraseña, int permiso, DateTime fechaCreacion,
+            DateTime ultimaConexion, TimeSpan ultimoTiempoTrabajo, TimeSpan tiempoTrabajoTotal, int activo)
         {
             this.id = id;
             this.usuario = usuario;
             this.contraseña = contraseña;
             this.permiso = permiso;
-            this.fechaActualConexion = fechaActualConexion;
-            this.fechaUltimaConexion = fechaUltimaConexion;
-            this.tiempoUltSesion = tiempoUltSesion;
-            this.tiempoTotal = tiempoTotal;
+            this.fechaCreacion = fechaCreacion;
+            this.ultimaConexion = ultimaConexion;
+            this.ultimoTiempoTrabajo = ultimoTiempoTrabajo;
+            this.tiempoTrabajoTotal = tiempoTrabajoTotal;
+            this.activo = activo;
         }
 
     }

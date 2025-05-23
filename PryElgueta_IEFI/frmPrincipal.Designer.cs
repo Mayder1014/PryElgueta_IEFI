@@ -41,7 +41,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerSesion = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.mostrarTiempoSesion = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +99,7 @@
             // tareasToolStripMenuItem
             // 
             this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
-            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.tareasToolStripMenuItem.Text = "Tareas...";
             // 
             // administraciónToolStripMenuItem
@@ -109,54 +109,57 @@
             this.toolStripMenuItem1,
             this.auditoriaToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             this.administraciónToolStripMenuItem.Text = "Administración...";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.usuariosToolStripMenuItem.Text = "Usuarios...";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(160, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
             // 
             // auditoriaToolStripMenuItem
             // 
             this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
-            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.auditoriaToolStripMenuItem.Text = "Auditoria...";
+            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
             // timerSesion
             // 
             this.timerSesion.Interval = 1000;
             this.timerSesion.Tick += new System.EventHandler(this.timerSesion_Tick);
             // 
-            // label1
+            // mostrarTiempoSesion
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(612, 441);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tiempo: 00:00:00";
+            this.mostrarTiempoSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mostrarTiempoSesion.AutoSize = true;
+            this.mostrarTiempoSesion.Location = new System.Drawing.Point(549, 441);
+            this.mostrarTiempoSesion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.mostrarTiempoSesion.Name = "mostrarTiempoSesion";
+            this.mostrarTiempoSesion.Size = new System.Drawing.Size(171, 16);
+            this.mostrarTiempoSesion.TabIndex = 2;
+            this.mostrarTiempoSesion.Text = "Tiempo en Sesión: 00:00:00";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 483);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.mostrarTiempoSesion);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPrincipal";
+            this.Text = "Menu Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -181,6 +184,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
         private System.Windows.Forms.Timer timerSesion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label mostrarTiempoSesion;
     }
 }

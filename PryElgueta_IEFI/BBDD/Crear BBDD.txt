@@ -21,3 +21,39 @@ VALUES
 ('alumno1', 'abcd1', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00'),
 ('alumno2', 'abcd2', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00'),
 ('alumno3', 'abcd3', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00');
+
+
+----------------------------------------------------------------------------------
+
+
+  -- Crear tabla Usuarios
+CREATE TABLE Usuarios (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Usuario NVARCHAR(50) NOT NULL UNIQUE,
+	Contraseña NVARCHAR(12) NOT NULL CHECK (LEN(Contraseña) BETWEEN 1 AND 12),
+    Permiso BIT NOT NULL DEFAULT 0, -- 0 para usuario normal, 1 para administrador
+    FechaCreacion DATETIME NOT NULL DEFAULT GETDATE(),
+	UltimaConexion DATETIME NULL,
+    UltimoTiempoTrabajo TIME(0) NULL, -- Formato HH:MM:SS
+    TiempoTrabajoTotal TIME(0) NULL, -- Formato HH:MM:SS
+    Activo BIT NOT NULL DEFAULT 1
+);
+
+-- Crear tabla Auditoria
+CREATE TABLE Auditoria (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UsuarioId INT NOT NULL,
+	TipoEvento NVARCHAR(50) NOT NULL, -- 'Login', 'Logout', 'Accion'
+    FechaHoraEvento DATETIME NOT NULL DEFAULT GETDATE(),
+    Descripcion NVARCHAR(MAX) NULL,
+    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id)
+);
+
+  INSERT INTO Usuarios (Usuario, Contraseña, Permiso, FechaCreacion, UltimaConexion , UltimoTiempoTrabajo, TiempoTrabajoTotal, Activo)
+VALUES
+('admin', 'admin', 1, GETDATE(), GETDATE(), '00:00:00', '00:00:00', 1),
+('Mayder', 'facundo', 1, GETDATE(), GETDATE(), '00:00:00','00:00:00', 1),
+('Arcorax', 'mariano', 1, GETDATE(), GETDATE(), '00:00:00','00:00:00', 1),
+('alumno1', 'abcd1', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00', 1),
+('alumno2', 'abcd2', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00', 1),
+('alumno3', 'abcd3', 0, GETDATE(), GETDATE(), '00:00:00','00:00:00', 1);

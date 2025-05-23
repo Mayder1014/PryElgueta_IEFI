@@ -26,10 +26,11 @@ namespace PryElgueta_IEFI
         clsConexionBBDD conexion = new clsConexionBBDD();
         clsUsuarios lstUsuarios = new clsUsuarios();
         int segundos = 0; int minutos = 0; int horas = 0;
+        string stringTiempo;
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            conexion.cargarLista(lstUsuarios);
+            conexion.cargarListaUsuarios(lstUsuarios);
             
             #region Mostrar al usuario frmLogin antes que frmPrincipal
             //2. Se termina de instanciar la variable para que se pueda manipular el frmPrincipal dentro de frmLogin.
@@ -69,8 +70,26 @@ namespace PryElgueta_IEFI
                     horas++;
                 }
             }
-            label1.Text = $"Tiempo: {horas.ToString()}:{minutos.ToString()}:{segundos.ToString()}";
+            stringTiempo = $"{horas.ToString()}:{minutos.ToString()}:{segundos.ToString()}";
+            mostrarTiempoSesion.Text = "Tiempo en Sesión: " + stringTiempo;
         }
 
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGestionUsuarios v = new frmGestionUsuarios();
+            v.ShowDialog();
+        }
+
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAuditoria v = new frmAuditoria();
+            v.ShowDialog();
+        }
+
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+
+        }
     }
 }
