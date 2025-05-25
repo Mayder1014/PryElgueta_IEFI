@@ -118,5 +118,20 @@
   <ItemGroup>
     <None Include="Resources\show.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\operador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

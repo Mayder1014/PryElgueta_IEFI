@@ -56,8 +56,9 @@ namespace PryElgueta_IEFI
 
                 frmPrincipal.formPrincipal.Show();
                 frmPrincipal.timerS.Enabled = true;
+                frmPrincipal.inicioSesion = DateTime.Now;
                 frmPrincipal.mostrarUsuario.Text = clsUsuario.usuarioLogueado.usuario.ToString();
-                frmPrincipal.mostrarFecha.Text = DateTime.Now.ToString();
+                frmPrincipal.mostrarFecha.Text = "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy");
 
                 clsRegistro registro = new clsRegistro(0, clsUsuario.usuarioLogueado.id, evento, DateTime.Now, "Descripcion");
 
@@ -81,14 +82,25 @@ namespace PryElgueta_IEFI
         //se invoca este evento y se asegura de que antes de cerrar frmLogin, se cierre primero frmPrincipal.
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (frmPrincipal.formPrincipal.Visible != true)
+            if (clsUsuario.usuarioLogueado == null)
             {
-                frmPrincipal.formPrincipal.Close();
+                DialogResult resultado = MessageBox.Show("¿Está seguro que quiere salir del programa?",
+                        "CONFIRMAR SALIDA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    if (frmPrincipal.formPrincipal.Visible != true)
+                    {
+                        frmPrincipal.formPrincipal.Close();
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
         }
         #endregion
-
-        
 
     }
 }

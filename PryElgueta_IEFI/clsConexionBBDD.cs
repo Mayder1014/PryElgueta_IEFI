@@ -34,6 +34,8 @@ namespace PryElgueta_IEFI
                 string query = "SELECT * FROM Usuarios";
                 comandoBaseDatos = new SqlCommand(query, conexionBaseDatos);
 
+                lista.lstUsuarios.Clear();
+
                 using (SqlDataReader reader = comandoBaseDatos.ExecuteReader())
                 {
                     while (reader.Read())
@@ -63,27 +65,23 @@ namespace PryElgueta_IEFI
             }
         }
 
-        public void actualizarUsuario(clsUsuario usuario)
+        public void agregarUsuario(clsUsuario usuario)
         {
             try
             {
                 conexionBaseDatos = new SqlConnection(cadenaConexion);
 
-                nombreBaseDeDatos = conexionBaseDatos.Database;
-
                 conexionBaseDatos.Open();
 
-                string updateQuery = "UPDATE Usuarios SET Usuario = @usuario, Contraseña = @contraseña, " +
-                    "Permiso = @permiso, FechaCreacion = @ultConexion, UltimaConexion = @ultConexion, " +
-                    "UltimoTiempoTrabajo = @ultTiempoTrabajo, TiempoTrabajoTotal = @tiempoTrabajoTotal, " +
-                    "Activo = @activo WHERE Id = @id";
-                SqlCommand cmd = new SqlCommand(updateQuery, conexionBaseDatos);
+                string insertQuery = "INSERT INTO Usuarios (Usuario, Contraseña, Permiso, FechaCreacion, UltimaConexion, UltimoTiempoTrabajo, " +
+                    "TiempoTrabajoTotal, Activo) VALUES " +
+                    "(@usuario, @contraseña, @permiso, @fechaCreacion, @ultConexion, @ultTiempoTrabajo, @tiempoTrabajoTotal, @activo)";
+                SqlCommand cmd = new SqlCommand(insertQuery, conexionBaseDatos);
 
-                cmd.Parameters.AddWithValue("@id", usuario.id);
                 cmd.Parameters.AddWithValue("@usuario", usuario.usuario);
                 cmd.Parameters.AddWithValue("@contraseña", usuario.contraseña);
                 cmd.Parameters.AddWithValue("@permiso", usuario.permiso);
-                cmd.Parameters.AddWithValue("@FechaCreacion", usuario.fechaCreacion);
+                cmd.Parameters.AddWithValue("@fechaCreacion", usuario.fechaCreacion);
                 cmd.Parameters.AddWithValue("@ultConexion", usuario.ultimaConexion);
                 cmd.Parameters.AddWithValue("@ultTiempoTrabajo", usuario.ultimoTiempoTrabajo);
                 cmd.Parameters.AddWithValue("@tiempoTrabajoTotal", usuario.tiempoTrabajoTotal);
@@ -101,6 +99,68 @@ namespace PryElgueta_IEFI
             }
         }
 
+        public void actualizarUsuario(clsUsuario usuario)
+        {
+            try
+            {
+                conexionBaseDatos = new SqlConnection(cadenaConexion);
+
+                nombreBaseDeDatos = conexionBaseDatos.Database;
+
+                conexionBaseDatos.Open();
+
+                string updateQuery = "UPDATE Usuarios SET Usuario = @usuario, Contraseña = @contraseña, " +
+                    "Permiso = @permiso, FechaCreacion = @fechaCreacion, UltimaConexion = @ultConexion, " +
+                    "UltimoTiempoTrabajo = @ultTiempoTrabajo, TiempoTrabajoTotal = @tiempoTrabajoTotal, " +
+                    "Activo = @activo WHERE Id = @id";
+                SqlCommand cmd = new SqlCommand(updateQuery, conexionBaseDatos);
+
+                cmd.Parameters.AddWithValue("@id", usuario.id);
+                cmd.Parameters.AddWithValue("@usuario", usuario.usuario);
+                cmd.Parameters.AddWithValue("@contraseña", usuario.contraseña);
+                cmd.Parameters.AddWithValue("@permiso", usuario.permiso);
+                cmd.Parameters.AddWithValue("@fechaCreacion", usuario.fechaCreacion);
+                cmd.Parameters.AddWithValue("@ultConexion", usuario.ultimaConexion);
+                cmd.Parameters.AddWithValue("@ultTiempoTrabajo", usuario.ultimoTiempoTrabajo);
+                cmd.Parameters.AddWithValue("@tiempoTrabajoTotal", usuario.tiempoTrabajoTotal);
+                cmd.Parameters.AddWithValue("@activo", usuario.activo);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexionBaseDatos.Close();
+            }
+        }
+
+        public void eliminarUsuario(int idEliminar)
+        {
+            try
+            {
+                conexionBaseDatos = new SqlConnection(cadenaConexion);
+
+                conexionBaseDatos.Open();
+
+                string deleteQuery = "DELETE FROM Usuarios WHERE Id = @id";
+                SqlCommand cmd = new SqlCommand(deleteQuery, conexionBaseDatos);
+
+                cmd.Parameters.AddWithValue("@id", idEliminar);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexionBaseDatos.Close();
+            }
+        }
 
         #endregion
 
@@ -115,6 +175,8 @@ namespace PryElgueta_IEFI
 
                 string query = "SELECT * FROM Auditoria";
                 comandoBaseDatos = new SqlCommand(query, conexionBaseDatos);
+
+                lista.lstAuditoria.Clear();
 
                 using (SqlDataReader reader = comandoBaseDatos.ExecuteReader())
                 {
@@ -148,7 +210,7 @@ namespace PryElgueta_IEFI
                 conexionBaseDatos = new SqlConnection(cadenaConexion);
                 conexionBaseDatos.Open();
 
-                string descripcion = "";
+                string descripcion = registro.descripcion;
 
                 switch (registro.tipoEvento)
                 {
@@ -159,16 +221,13 @@ namespace PryElgueta_IEFI
                         descripcion = "El usuario cerró sesión en el programa.";
                         break;
                     case "Administración - Usuarios":
-                        descripcion = "Acceso a Administración - Gestion de Usuarios";
+                        descripcion = "El usuario accedió a Administración - Gestion de Usuarios";
                         break;
                     case "Administración - Auditoria":
-                        descripcion = "Acceso a Administración - Auditoria";
+                        descripcion = "El usuario accedió a Administración - Auditoria";
                         break;
-                    case "Log":
-                        descripcion = "Acceso a Administración - Auditoria";
-                        break;
-                    default: 
-                        descripcion = "";
+                    default:
+                        descripcion = registro.descripcion;
                         break;
                 }
 
@@ -193,7 +252,7 @@ namespace PryElgueta_IEFI
             }
         }
 
-        public void actualizarAuditoria()
+        public void mostrarTablaAuditoria()
         {
             try
             {

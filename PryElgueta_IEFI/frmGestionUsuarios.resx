@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblNota.Text" xml:space="preserve">
+    <value>NOTA: Al agregar un usuario nuevo, se le asignará automaticamente el rol de Operador.
+Como Administrador, podra modificar sus propios datos o el de operadores, pero NO
+el de otros Administradores. El usuario mostrado en pantalla es aquel que modificará
+en el apartado "&gt;&gt; Modificar Usuario &lt;&lt;".</value>
+  </data>
 </root>
