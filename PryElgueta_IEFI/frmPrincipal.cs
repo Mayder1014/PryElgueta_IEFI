@@ -50,8 +50,6 @@ namespace PryElgueta_IEFI
             frmLogin v = new frmLogin();
             v.ShowDialog();
             #endregion
-
-            formPrincipal.WindowState = FormWindowState.Maximized;
         }
 
         private void timerSesion_Tick(object sender, EventArgs e)

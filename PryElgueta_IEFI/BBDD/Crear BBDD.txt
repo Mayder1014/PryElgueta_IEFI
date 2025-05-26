@@ -28,13 +28,13 @@ CREATE TABLE Auditoria (
 INSERT INTO Usuarios (Usuario, Contraseña, Permiso, FechaCreacion, UltimaConexion, UltimoTiempoTrabajo, TiempoTrabajoTotal, Activo)
 VALUES
 -- Administradores (antigüedad de 1-2 años)
-('admin', 'admin', 1, DATEADD(YEAR, -2, GETDATE()), DATEADD(DAY, -1, GETDATE()), '08:32:15', '1450:22:10', 1),
-('Mayder', 'facundo', 1, DATEADD(YEAR, -1, GETDATE()), DATEADD(DAY, -3, GETDATE()), '07:45:30', '1200:15:45', 1),
-('Arcorax', 'mariano', 1, DATEADD(MONTH, -18, GETDATE()), DATEADD(HOUR, -12, GETDATE()), '06:15:22', '980:30:20', 1),
+('admin', 'admin', 1, DATEADD(YEAR, -2, GETDATE()), DATEADD(DAY, -1, GETDATE()), '00:32:15', '14:22:10', 1),
+('Mayder', 'facundo', 1, DATEADD(YEAR, -1, GETDATE()), DATEADD(DAY, -3, GETDATE()), '00:45:30', '12:15:45', 1),
+('Arcorax', 'mariano', 1, DATEADD(MONTH, -18, GETDATE()), DATEADD(HOUR, -12, GETDATE()), '00:15:22', '9:30:20', 1),
 -- Operadores (antigüedad más recientes)
-('operador1', 'op123', 0, DATEADD(MONTH, -6, GETDATE()), DATEADD(DAY, -5, GETDATE()), '05:30:00', '450:10:30', 1),
-('operador2', 'op456', 0, DATEADD(MONTH, -3, GETDATE()), DATEADD(DAY, -15, GETDATE()), '04:45:15', '220:45:10', 0), -- Inactivo
-('operador3', 'op789', 0, DATEADD(MONTH, -1, GETDATE()), GETDATE(), '06:00:00', '120:30:00', 1);
+('operador1', 'op123', 0, DATEADD(MONTH, -6, GETDATE()), DATEADD(DAY, -5, GETDATE()), '00:30:00', '08:10:30', 1),
+('operador2', 'op456', 0, DATEADD(MONTH, -3, GETDATE()), DATEADD(DAY, -15, GETDATE()), '00:45:15', '02:45:10', 0), -- Inactivo
+('operador3', 'op789', 0, DATEADD(MONTH, -1, GETDATE()), GETDATE(), '00:06:00', '12:30:00', 1);
 
 -- 20 Registros de Auditoria
 
