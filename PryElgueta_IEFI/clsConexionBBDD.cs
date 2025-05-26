@@ -221,10 +221,10 @@ namespace PryElgueta_IEFI
                         descripcion = "El usuario cerró sesión en el programa.";
                         break;
                     case "Administración - Usuarios":
-                        descripcion = "El usuario accedió a Administración - Gestion de Usuarios";
+                        descripcion = "El usuario accedió a Administración - Gestión de Usuarios.";
                         break;
                     case "Administración - Auditoria":
-                        descripcion = "El usuario accedió a Administración - Auditoria";
+                        descripcion = "El usuario accedió a Administración - Auditoria.";
                         break;
                     default:
                         descripcion = registro.descripcion;

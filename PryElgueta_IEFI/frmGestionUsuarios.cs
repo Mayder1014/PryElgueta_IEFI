@@ -53,7 +53,7 @@ namespace PryElgueta_IEFI
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
-            string evento = "Auditoria - Agregar Usuario";
+            string evento = "Gestión de Usuarios - Agregar Usuario";
             string descripcion;
 
             //*Hacer control de txt vacios*
@@ -89,7 +89,7 @@ namespace PryElgueta_IEFI
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
         {
-            string evento = "Auditoria - Modificar Usuario";
+            string evento = "Gestión de Usuarios - Modificar Usuario";
             string descripcion;
 
             var user = lstUsuarios.lstUsuarios[i];
@@ -107,23 +107,23 @@ namespace PryElgueta_IEFI
 
                 if (chkNuevoNombre.Checked)
                 {
-                    if (txtNombreModificar.Text != user.usuario)
+                    if (txtNombreModificar.Text != user.usuario && txtNombreModificar.Text != "")
                     {
                         nuevoNombre = txtNombreModificar.Text;
                         usuarioModificado.usuario = nuevoNombre;
                     }
                     else
-                        MessageBox.Show("El nuevo nombre que intenta asignar es el mismo que ya tiene el usuario.", "ERROR NUEVO NOMBRE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El nuevo nombre que intenta asignar es el mismo que ya tiene el usuario o está vacio.", "ERROR NUEVO NOMBRE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (chkNuevaContraseña.Checked)
                 {
-                    if (txtContraseñaModificar.Text != user.contraseña)
+                    if (txtContraseñaModificar.Text != user.contraseña && txtContraseñaModificar.Text != "")
                     {
                         nuevaContraseña = txtContraseñaModificar.Text;
                         usuarioModificado.contraseña = nuevaContraseña;
                     }
                     else
-                        MessageBox.Show("La nueva contraseña que intenta asignar es la misma que ya tiene el usuario.", "ERROR NUEVA CONTRASEÑA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("La nueva contraseña que intenta asignar es la misma que ya tiene el usuario o está vacio..", "ERROR NUEVA CONTRASEÑA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (chkEstadoUsuario.Checked)
                 {
@@ -173,7 +173,7 @@ namespace PryElgueta_IEFI
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
-            string evento = "Auditoria - Eliminar Usuario";
+            string evento = "Gestión de Usuarios - Eliminar Usuario";
             string descripcion;
 
             var user = lstUsuarios.lstUsuarios[i]; //Se obtienen los datos usuario en pantalla.
@@ -346,7 +346,10 @@ namespace PryElgueta_IEFI
 
             if (chkEstadoUsuario.Checked)
             {
-                optActivo.Enabled = true; optInactivo.Enabled = true;
+                if (clsUsuario.usuarioLogueado.id != user.id)
+                {
+                    optActivo.Enabled = true; optInactivo.Enabled = true;
+                }
             }
             else
             {
