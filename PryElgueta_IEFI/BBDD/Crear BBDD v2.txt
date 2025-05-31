@@ -1,0 +1,42 @@
+CREATE DATABASE Trabajo;
+GO
+
+USE Trabajo;
+GO
+
+CREATE TABLE Usuarios (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    NombreUsuario NVARCHAR(50) NOT NULL UNIQUE,
+    Contraseña NVARCHAR(255) NOT NULL,
+    Nombre NVARCHAR(50) NOT NULL,
+    Apellido NVARCHAR(50) NOT NULL,
+    Edad INT NOT NULL,
+    DNI NVARCHAR(15) NULL UNIQUE,
+    Telefono NVARCHAR(20) NULL,
+    Email NVARCHAR(100) NULL UNIQUE,
+    Permiso BIT NOT NULL DEFAULT 0, -- 0: operador, 1: administrador
+    FechaCreacion DATETIME NOT NULL DEFAULT GETDATE(),
+    Activo BIT NOT NULL DEFAULT 1
+);
+GO
+
+CREATE TABLE ActividadUsuario (
+    UsuarioId INT PRIMARY KEY,
+    UltimaConexion DATETIME NULL,
+    UltimoTiempoSesion TIME(0) NULL,
+    TiempoTotalTrabajo TIME(0) NULL DEFAULT '00:00:00',
+    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE Auditoria (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UsuarioId INT NOT NULL,
+    TipoEvento NVARCHAR(50) NOT NULL,
+    FechaHoraEvento DATETIME NOT NULL DEFAULT GETDATE(),
+    Descripcion NVARCHAR(MAX) NULL,
+    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id)
+);
+GO
+
+

@@ -18,15 +18,27 @@ namespace PryElgueta_IEFI
 
         public clsUsuario loginDeUsuario(string usuario, string contraseña)
         {
-            var existe = lstUsuarios.Find(elem => elem.usuario.Equals(usuario) && elem.contraseña.Equals(contraseña));
-            
-            if (existe != null)
+            bool existe = false;
+
+            var user = lstUsuarios.Find(elem => elem.usuario.Equals(usuario) && elem.contraseña.Equals(contraseña));
+
+            if (user != null) existe = true;
+
+            if (existe != false)
             {
-                return existe;
+                if (user.activo != 0)
+                {
+                    return user;
+                }
+                else
+                {
+                    MessageBox.Show("El Usuario se encuentra actualmente en estado Inactivo y no puede loguearse en el programa.\n" +
+                        "Comuníquese con un Administrador para cambiar su estado a Activo nuevamente.", "USUARIO INACTIVO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectas.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario o contraseña incorrectas.", "ERROR DE LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return null; //Retorna null en caso de no encontrar al usuario.

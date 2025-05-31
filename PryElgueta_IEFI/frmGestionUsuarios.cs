@@ -28,6 +28,7 @@ namespace PryElgueta_IEFI
             habilitarAtrasYSiguiente();
             mostrarUsuario();
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -36,6 +37,7 @@ namespace PryElgueta_IEFI
             habilitarAtrasYSiguiente();
             mostrarUsuario();
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -44,6 +46,7 @@ namespace PryElgueta_IEFI
             habilitarAtrasYSiguiente();
             mostrarUsuario();
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -216,39 +219,58 @@ namespace PryElgueta_IEFI
             }
         }
 
+        private void txtNombreAgregar_TextChanged(object sender, EventArgs e)
+        {
+            habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
+        }
+
+        private void txtContraseñaAgregar_TextChanged(object sender, EventArgs e)
+        {
+            habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
+        }
+
         private void txtNombreModificar_TextChanged(object sender, EventArgs e)
         {
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void txtContraseñaModificar_TextChanged(object sender, EventArgs e)
         {
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void optActivo_CheckedChanged(object sender, EventArgs e)
         {
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void optInactivo_CheckedChanged(object sender, EventArgs e)
         {
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void chkNuevoNombre_CheckedChanged(object sender, EventArgs e)
         {
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void chkNuevaContraseña_CheckedChanged(object sender, EventArgs e)
         {
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         private void chkEstadoUsuario_CheckedChanged(object sender, EventArgs e)
         {
             habilitarDeshabilitarBotones();
+            cambiarColorDeBoton();
         }
 
         #region Metodos...
@@ -329,7 +351,22 @@ namespace PryElgueta_IEFI
         {
             var user = lstUsuarios.lstUsuarios[i];
 
-            //Habilitar o deshabilitar textBoxes/radioButtons
+            //Habilitar o deshabilitar textBox y botón Agregar Usuario
+            if (txtNombreAgregar.Text == "" || string.IsNullOrWhiteSpace(txtNombreAgregar.Text))
+            {
+                txtContraseñaAgregar.Enabled = false; txtContraseñaAgregar.BackColor = Color.Gray;
+                btnAgregarUsuario.Enabled = false;
+            }
+            else
+            {
+                txtContraseñaAgregar.Enabled = true; txtContraseñaAgregar.BackColor = SystemColors.Control;
+                if (txtContraseñaAgregar.Text == "" || string.IsNullOrWhiteSpace(txtContraseñaAgregar.Text))
+                    btnAgregarUsuario.Enabled = false;
+                else
+                    btnAgregarUsuario.Enabled = true;
+            }
+
+            //Habilitar o deshabilitar textBoxes/radioButtons y botón Modificar Usuario
             if (chkNuevoNombre.Checked)
                 txtNombreModificar.Enabled = true;
             else
@@ -384,6 +421,27 @@ namespace PryElgueta_IEFI
             {
                 btnModificarUsuario.Enabled = false;
             }
+        }
+
+        public void cambiarColorDeBoton()
+        {
+            //Agregar -----------------------------------------------
+            if (btnAgregarUsuario.Enabled != true)
+                btnAgregarUsuario.BackColor = Color.Gray;
+            else
+                btnAgregarUsuario.BackColor = Color.MediumSeaGreen;
+
+            //Modificar ---------------------------------------------
+            if (btnModificarUsuario.Enabled != true)
+                btnModificarUsuario.BackColor = Color.Gray;
+            else
+                btnModificarUsuario.BackColor = Color.SteelBlue;
+
+            //Eliminar ----------------------------------------------
+            if (btnEliminarUsuario.Enabled != true)
+                btnEliminarUsuario.BackColor = Color.Gray;
+            else
+                btnEliminarUsuario.BackColor = Color.IndianRed;
         }
 
         #endregion

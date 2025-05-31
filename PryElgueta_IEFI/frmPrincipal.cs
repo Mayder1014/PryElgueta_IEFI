@@ -22,6 +22,7 @@ namespace PryElgueta_IEFI
         static public Timer timerS;
         static public ToolStripStatusLabel mostrarUsuario;
         static public Label mostrarFecha;
+        static public ToolStripMenuItem administracionMenu;
 
         clsConexionBBDD conexion = new clsConexionBBDD();
         clsUsuarios lstUsuarios = new clsUsuarios();
@@ -46,7 +47,10 @@ namespace PryElgueta_IEFI
             mostrarUsuario = lblMostrarUsuario;
             mostrarFecha = lblMostrarFecha;
 
-            //6. Abre el frmLogin. Dando la ilusión de que el primer form que se abre es este antes que frmPrincipal.
+            //6. Se termina de instanciar la variable para mostrar o no el menu Administración según el permiso del usuario logueado.
+            administracionMenu = administraciónToolStripMenuItem;
+
+            //7. Abre el frmLogin. Dando la ilusión de que el primer form que se abre es este antes que frmPrincipal.
             frmLogin v = new frmLogin();
             v.ShowDialog();
             #endregion
@@ -84,16 +88,24 @@ namespace PryElgueta_IEFI
 
         private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Registrar evento en Auditoria
-            string tipoEvento = "Administración - Auditoria";
+            //Si el permiso del usuario logueado es 1, es administrador, de lo contrario es operador y se le niega el acceso.
+            if (clsUsuario.usuarioLogueado.permiso == 1)
+            {
+                //Registrar evento en Auditoria
+                string tipoEvento = "Administración - Auditoria";
 
-            clsRegistro registro = new clsRegistro(0, clsUsuario.usuarioLogueado.id, tipoEvento, DateTime.Now, "");
+                clsRegistro registro = new clsRegistro(0, clsUsuario.usuarioLogueado.id, tipoEvento, DateTime.Now, "");
 
-            conexion.registrarEnAuditoria(registro);
+                conexion.registrarEnAuditoria(registro);
 
-            //Abrir frmAuditoria
-            frmAuditoria v = new frmAuditoria();
-            v.ShowDialog();
+                //Abrir frmAuditoria
+                frmAuditoria v = new frmAuditoria();
+                v.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta sección.", "ACCESO DENEGADO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #region Logout de usuario...

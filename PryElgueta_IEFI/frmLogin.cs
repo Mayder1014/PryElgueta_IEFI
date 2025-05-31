@@ -23,6 +23,7 @@ namespace PryElgueta_IEFI
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtContraseña.UseSystemPasswordChar = true;
+            
 
             conexion.cargarListaUsuarios(lstUsuarios);
         }
@@ -32,12 +33,12 @@ namespace PryElgueta_IEFI
             if (txtContraseña.UseSystemPasswordChar != true)
             {
                 txtContraseña.UseSystemPasswordChar = true;
-                btnMostrarOcultar.Image = Properties.Resources.show;
+                btnMostrarOcultar.Image = Properties.Resources.showWhite;
             }
             else
             {
                 txtContraseña.UseSystemPasswordChar = false;
-                btnMostrarOcultar.Image = Properties.Resources.hide;
+                btnMostrarOcultar.Image = Properties.Resources.hideWhite;
             }
         }
 
@@ -53,8 +54,14 @@ namespace PryElgueta_IEFI
                 MessageBox.Show($"¡Bienvenido {clsUsuario.usuarioLogueado.usuario}!", "LOGIN EXITOSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 string evento = "Login"; //Tipo de evento a registrar
 
-
                 frmPrincipal.formPrincipal.Show();
+
+                //Si el usuario logueado es operador, se le ocultará el menu de Administración, Auditoria y Usuarios.
+                if (clsUsuario.usuarioLogueado.permiso == 0)
+                    frmPrincipal.administracionMenu.Visible = false;
+                else
+                    frmPrincipal.administracionMenu.Visible = true;
+
                 frmPrincipal.timerS.Enabled = true;
                 frmPrincipal.inicioSesion = DateTime.Now;
                 frmPrincipal.mostrarUsuario.Text = clsUsuario.usuarioLogueado.usuario.ToString();
@@ -65,11 +72,6 @@ namespace PryElgueta_IEFI
                 conexion.registrarEnAuditoria(registro); //Se registra el evento en Auditoria.
 
                 this.Close();
-
-                //frmPrincipal.timerS.Enabled = true;
-                /*abrir frmPrincipal
-                frmPrincipal v = new frmPrincipal();
-                v.Show();*/
             }
         }
 
