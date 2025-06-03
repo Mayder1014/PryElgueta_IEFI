@@ -95,28 +95,32 @@
             // 
             // tareasToolStripMenuItem
             // 
-            this.tareasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.tareasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.tareasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tareasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
-            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.tareasToolStripMenuItem.Text = "Tareas...";
             // 
             // administraciónToolStripMenuItem
             // 
+            this.administraciónToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
             this.toolStripMenuItem1,
             this.auditoriaToolStripMenuItem});
-            this.administraciónToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.administraciónToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.administraciónToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.administraciónToolStripMenuItem.Text = "Administración...";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.usuariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.usuariosToolStripMenuItem.Text = "Usuarios...";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -125,44 +129,50 @@
             this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(160, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
             // 
             // auditoriaToolStripMenuItem
             // 
             this.auditoriaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.auditoriaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.auditoriaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
-            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.auditoriaToolStripMenuItem.Text = "Auditoria...";
             this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
             // opcionesToolStripMenuItem
             // 
+            this.opcionesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cerrarSesiónToolStripMenuItem,
             this.toolStripSeparator1,
             this.salirDelProgramaToolStripMenuItem});
-            this.opcionesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.opcionesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opcionesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.opcionesToolStripMenuItem.Text = "Opciones...";
             // 
             // cerrarSesiónToolStripMenuItem
             // 
+            this.cerrarSesiónToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.cerrarSesiónToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión...";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(222, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(228, 6);
             // 
             // salirDelProgramaToolStripMenuItem
             // 
+            this.salirDelProgramaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.salirDelProgramaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.salirDelProgramaToolStripMenuItem.Name = "salirDelProgramaToolStripMenuItem";
-            this.salirDelProgramaToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.salirDelProgramaToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.salirDelProgramaToolStripMenuItem.Text = "Salir del programa...";
             this.salirDelProgramaToolStripMenuItem.Click += new System.EventHandler(this.salirDelProgramaToolStripMenuItem_Click);
             // 
@@ -176,7 +186,7 @@
             this.mostrarTiempoSesion.AutoSize = true;
             this.mostrarTiempoSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mostrarTiempoSesion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mostrarTiempoSesion.ForeColor = System.Drawing.SystemColors.Control;
+            this.mostrarTiempoSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.mostrarTiempoSesion.Location = new System.Drawing.Point(0, 436);
             this.mostrarTiempoSesion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mostrarTiempoSesion.Name = "mostrarTiempoSesion";

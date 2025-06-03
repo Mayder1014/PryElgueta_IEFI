@@ -57,6 +57,12 @@ namespace PryElgueta_IEFI
         public void añadirColumnas(DataGridView dgv)
         {
             dgv.Columns.Clear();
+
+            //Modificaciones para cambiar el color de las columnas
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(14, 32, 37);
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.Control;
+
             string[] columnas;
 
             if (optGeneral.Checked)
@@ -98,7 +104,7 @@ namespace PryElgueta_IEFI
                     else 
                         permiso = "Operador";
 
-                    dgv.Rows.Add(reg.id, reg.usuarioId, usuario.usuario, permiso, usuario.ultimaConexion, usuario.ultimoTiempoTrabajo,
+                    dgv.Rows.Add(reg.id, reg.usuarioId, usuario.nombreUsuario, permiso, usuario.ultimaConexion, usuario.ultimoTiempoTrabajo,
                         usuario.tiempoTrabajoTotal, reg.fechaHoraEvento, reg.tipoEvento, reg.descripcion);
                 });
             }
@@ -109,7 +115,7 @@ namespace PryElgueta_IEFI
                     //Busca y retorna al usuario del registro utilizando su Id.
                     var usuario = lstUsuarios.lstUsuarios.Find(user => user.id.Equals(reg.usuarioId));
 
-                    dgv.Rows.Add(reg.id, reg.fechaHoraEvento, usuario.usuario, reg.tipoEvento, reg.descripcion);
+                    dgv.Rows.Add(reg.id, reg.fechaHoraEvento, usuario.nombreUsuario, reg.tipoEvento, reg.descripcion);
                 });
             }
             else
@@ -121,7 +127,7 @@ namespace PryElgueta_IEFI
                     else
                         permiso = "Operador";
 
-                    dgv.Rows.Add(user.id, user.usuario, permiso, user.fechaCreacion, user.ultimaConexion,
+                    dgv.Rows.Add(user.id, user.nombreUsuario, permiso, user.fechaCreacion, user.ultimaConexion,
                         user.ultimoTiempoTrabajo, user.tiempoTrabajoTotal);
                 });
             }

@@ -31,10 +31,9 @@ namespace PryElgueta_IEFI
         private TimeSpan tiempoAcumulado; // Acumula el tiempo total de sesión
 
         private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-            conexion.cargarListaUsuarios(lstUsuarios);
-            
+        {   
             #region Mostrar al usuario frmLogin antes que frmPrincipal
+
             //2. Se termina de instanciar la variable para que se pueda manipular el frmPrincipal dentro de frmLogin.
             formPrincipal = this;
             formPrincipal.Hide(); //3. Se oculta el frmPrincipal.
@@ -53,7 +52,10 @@ namespace PryElgueta_IEFI
             //7. Abre el frmLogin. Dando la ilusión de que el primer form que se abre es este antes que frmPrincipal.
             frmLogin v = new frmLogin();
             v.ShowDialog();
+
             #endregion
+
+            conexion.cargarListaUsuarios(lstUsuarios);
         }
 
         private void timerSesion_Tick(object sender, EventArgs e)

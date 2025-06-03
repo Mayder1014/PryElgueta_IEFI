@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.imgUsuario = new System.Windows.Forms.PictureBox();
             this.btnMostrarOcultar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +118,19 @@
             this.panel1.Size = new System.Drawing.Size(485, 443);
             this.panel1.TabIndex = 7;
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(91, 14);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(306, 65);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "¡Bienvenido! \r\nIngrese los datos solicitados para loguearse en el programa.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // imgUsuario
             // 
             this.imgUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
@@ -144,19 +158,6 @@
             this.btnMostrarOcultar.UseVisualStyleBackColor = false;
             this.btnMostrarOcultar.Click += new System.EventHandler(this.btnMostrarOcultar_Click);
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(91, 14);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 65);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "¡Bienvenido! \r\nIngrese los datos solicitados para loguearse en el programa.";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,6 +166,7 @@
             this.ClientSize = new System.Drawing.Size(550, 492);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmLogin";

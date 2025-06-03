@@ -51,6 +51,12 @@
     <Compile Include="clsRegistro.cs" />
     <Compile Include="clsUsuario.cs" />
     <Compile Include="clsUsuarios.cs" />
+    <Compile Include="frmAgregarModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarModificarUsuario.Designer.cs">
+      <DependentUpon>frmAgregarModificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAuditoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,8 +81,17 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeleccionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarUsuario.Designer.cs">
+      <DependentUpon>frmSeleccionarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgregarModificarUsuario.resx">
+      <DependentUpon>frmAgregarModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAuditoria.resx">
       <DependentUpon>frmAuditoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarUsuario.resx">
+      <DependentUpon>frmSeleccionarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,6 +162,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hideWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

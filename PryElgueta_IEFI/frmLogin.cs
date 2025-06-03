@@ -51,7 +51,7 @@ namespace PryElgueta_IEFI
 
             if (clsUsuario.usuarioLogueado != null)
             {
-                MessageBox.Show($"¡Bienvenido {clsUsuario.usuarioLogueado.usuario}!", "LOGIN EXITOSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"¡Bienvenido {clsUsuario.usuarioLogueado.nombreUsuario}!", "LOGIN EXITOSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 string evento = "Login"; //Tipo de evento a registrar
 
                 frmPrincipal.formPrincipal.Show();
@@ -64,7 +64,7 @@ namespace PryElgueta_IEFI
 
                 frmPrincipal.timerS.Enabled = true;
                 frmPrincipal.inicioSesion = DateTime.Now;
-                frmPrincipal.mostrarUsuario.Text = clsUsuario.usuarioLogueado.usuario.ToString();
+                frmPrincipal.mostrarUsuario.Text = clsUsuario.usuarioLogueado.nombreUsuario.ToString();
                 frmPrincipal.mostrarFecha.Text = "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy");
 
                 clsRegistro registro = new clsRegistro(0, clsUsuario.usuarioLogueado.id, evento, DateTime.Now, "Descripcion");

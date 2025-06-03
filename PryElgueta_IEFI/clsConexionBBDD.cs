@@ -31,7 +31,14 @@ namespace PryElgueta_IEFI
                 conexionBaseDatos = new SqlConnection(cadenaConexion);
                 conexionBaseDatos.Open();
 
-                string query = "SELECT * FROM Usuarios";
+                //string query = "SELECT * FROM Usuarios";
+
+                //Consulta que une tabla Usuarios y ActividadUsuario
+                string query = @"
+                SELECT u.*, a.UltimaConexion, a.UltimoTiempoTrabajo, a.TiempoTrabajoTotal 
+                FROM Usuarios u
+                LEFT JOIN ActividadUsuario a ON u.Id = a.UsuarioId";
+
                 comandoBaseDatos = new SqlCommand(query, conexionBaseDatos);
 
                 lista.lstUsuarios.Clear();
@@ -41,15 +48,20 @@ namespace PryElgueta_IEFI
                     while (reader.Read())
                     {
                         clsUsuario user = new clsUsuario(
-                            reader.GetInt32(0),                        // Id
-                            reader.GetString(1),                       // Usuario
-                            reader.GetString(2),                       // Contraseña
-                            Convert.ToInt32(reader.GetBoolean(3)),     // Permiso
-                            reader.GetDateTime(4),                     // FechaCreacion
-                            reader.GetDateTime(5),                     // UltimaConexion
-                            reader.GetTimeSpan(6),                     // UltimoTiempoTrabajo
-                            reader.GetTimeSpan(7),                     // TiempoTrabajoTotal
-                            Convert.ToInt32(reader.GetBoolean(8))      // Activo
+                            reader.GetInt32(reader.GetOrdinal("Id")),
+                            reader.GetString(reader.GetOrdinal("NombreUsuario")),
+                            reader.GetString(reader.GetOrdinal("Contraseña")),
+                            Convert.ToInt32(reader.GetBoolean(reader.GetOrdinal("Permiso"))),
+                            reader.GetString(reader.GetOrdinal("Nombre")),
+                            reader.GetString(reader.GetOrdinal("Apellido")),
+                            reader.GetInt32(reader.GetOrdinal("Edad")),
+                            reader.IsDBNull(reader.GetOrdinal("DNI")) ? null : reader.GetString(reader.GetOrdinal("DNI")),
+                            reader.IsDBNull(reader.GetOrdinal("Telefono")) ? null : reader.GetString(reader.GetOrdinal("Telefono")),
+                            reader.IsDBNull(reader.GetOrdinal("Email")) ? null : reader.GetString(reader.GetOrdinal("Email")),
+                            reader.GetDateTime(reader.GetOrdinal("FechaCreacion")),
+                            reader.GetDateTime(reader.GetOrdinal("UltimaConexion")),
+                            reader.GetTimeSpan(reader.GetOrdinal("UltimoTiempoTrabajo")),
+                            reader.GetTimeSpan(reader.GetOrdinal("TiempoTrabajoTotal"))
                         );
                         lista.lstUsuarios.Add(user);
                     }
@@ -73,6 +85,33 @@ namespace PryElgueta_IEFI
 
                 conexionBaseDatos.Open();
 
+                // Insertar en tabla Usuarios y ActividadUsuario
+                string insertQuery = @"INSERT INTO Usuarios 
+                                (NombreUsuario, Contraseña, Permiso, Nombre, Apellido, Edad, DNI, Telefono, Email, FechaCreacion) VALUES 
+                                (@nombreUsuario, @contraseña, @permiso, @nombre, @apellido, @edad, @dni, @telefono, @email, @fechaCreacion);
+                                
+                                INSERT INTO ActividadUsuario 
+                                (UsuarioId, UltimaConexion, UltimoTiempoTrabajo, TiempoTrabajoTotal) VALUES 
+                                (SCOPE_IDENTITY(), @ultConexion, '00:00:00', '00:00:00');";
+
+                SqlCommand cmd = new SqlCommand(insertQuery, conexionBaseDatos);
+
+                cmd.Parameters.AddWithValue("@nombreUsuario", usuario.nombreUsuario);
+                cmd.Parameters.AddWithValue("@contraseña", usuario.contraseña);
+                cmd.Parameters.AddWithValue("@permiso", usuario.permiso);
+                cmd.Parameters.AddWithValue("@nombre", usuario.nombre);
+                cmd.Parameters.AddWithValue("@apellido", usuario.apellido);
+                cmd.Parameters.AddWithValue("@edad", usuario.edad);
+                cmd.Parameters.AddWithValue("@dni", (object)usuario.DNI ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@telefono", (object)usuario.telefono ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@email", (object)usuario.email ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@fechaCreacion", usuario.fechaCreacion);
+                cmd.Parameters.AddWithValue("@ultConexion", DateTime.Now);
+
+
+                cmd.ExecuteNonQuery();
+
+                /*
                 string insertQuery = "INSERT INTO Usuarios (Usuario, Contraseña, Permiso, FechaCreacion, UltimaConexion, UltimoTiempoTrabajo, " +
                     "TiempoTrabajoTotal, Activo) VALUES " +
                     "(@usuario, @contraseña, @permiso, @fechaCreacion, @ultConexion, @ultTiempoTrabajo, @tiempoTrabajoTotal, @activo)";
@@ -87,7 +126,7 @@ namespace PryElgueta_IEFI
                 cmd.Parameters.AddWithValue("@tiempoTrabajoTotal", usuario.tiempoTrabajoTotal);
                 cmd.Parameters.AddWithValue("@activo", usuario.activo);
 
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();*/
             }
             catch (Exception ex)
             {
@@ -109,6 +148,45 @@ namespace PryElgueta_IEFI
 
                 conexionBaseDatos.Open();
 
+                // Actualizar tabla Usuarios y ActividadUsuario
+                string updateQuery = @"UPDATE Usuarios SET 
+                                NombreUsuario = @nombreUsuario, 
+                                Contraseña = @contraseña, 
+                                Permiso = @permiso,
+                                Nombre = @nombre,
+                                Apellido = @apellido,
+                                Edad = @edad,
+                                DNI = @dni,
+                                Telefono = @telefono,
+                                Email = @email
+                                WHERE Id = @id;
+                                
+                                UPDATE ActividadUsuario SET
+                                UltimaConexion = @ultConexion,
+                                UltimoTiempoTrabajo = @ultTiempoTrabajo,
+                                TiempoTrabajoTotal = @tiempoTrabajoTotal
+                                WHERE UsuarioId = @id;";
+
+                SqlCommand cmd = new SqlCommand(updateQuery, conexionBaseDatos);
+
+                cmd.Parameters.AddWithValue("@id", usuario.id);
+                cmd.Parameters.AddWithValue("@nombreUsuario", usuario.nombreUsuario);
+                cmd.Parameters.AddWithValue("@contraseña", usuario.contraseña);
+                cmd.Parameters.AddWithValue("@permiso", usuario.permiso);
+                cmd.Parameters.AddWithValue("@nombre", usuario.nombre);
+                cmd.Parameters.AddWithValue("@apellido", usuario.apellido);
+                cmd.Parameters.AddWithValue("@edad", usuario.edad);
+                cmd.Parameters.AddWithValue("@dni", (object)usuario.DNI ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@telefono", (object)usuario.telefono ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@email", (object)usuario.email ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@ultConexion", (object)usuario.ultimaConexion ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@ultTiempoTrabajo", (object)usuario.ultimoTiempoTrabajo ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@tiempoTrabajoTotal", usuario.tiempoTrabajoTotal);
+
+                cmd.ExecuteNonQuery();
+
+
+                /*
                 string updateQuery = "UPDATE Usuarios SET Usuario = @usuario, Contraseña = @contraseña, " +
                     "Permiso = @permiso, FechaCreacion = @fechaCreacion, UltimaConexion = @ultConexion, " +
                     "UltimoTiempoTrabajo = @ultTiempoTrabajo, TiempoTrabajoTotal = @tiempoTrabajoTotal, " +
@@ -125,7 +203,7 @@ namespace PryElgueta_IEFI
                 cmd.Parameters.AddWithValue("@tiempoTrabajoTotal", usuario.tiempoTrabajoTotal);
                 cmd.Parameters.AddWithValue("@activo", usuario.activo);
 
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();*/
             }
             catch (Exception ex)
             {
@@ -243,26 +321,6 @@ namespace PryElgueta_IEFI
                 cmd.ExecuteNonQuery();
             }
             catch ( Exception ex )
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conexionBaseDatos.Close();
-            }
-        }
-
-        public void mostrarTablaAuditoria()
-        {
-            try
-            {
-                conexionBaseDatos = new SqlConnection(cadenaConexion);
-                conexionBaseDatos.Open();
-
-
-
-            }
-            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

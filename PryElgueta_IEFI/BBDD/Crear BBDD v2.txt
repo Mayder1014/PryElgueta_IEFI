@@ -7,24 +7,23 @@ GO
 CREATE TABLE Usuarios (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     NombreUsuario NVARCHAR(50) NOT NULL UNIQUE,
-    Contraseña NVARCHAR(255) NOT NULL,
+    Contraseña NVARCHAR(20) NOT NULL,
+    Permiso BIT NOT NULL DEFAULT 0, -- 0: operador, 1: administrador
     Nombre NVARCHAR(50) NOT NULL,
     Apellido NVARCHAR(50) NOT NULL,
     Edad INT NOT NULL,
     DNI NVARCHAR(15) NULL UNIQUE,
     Telefono NVARCHAR(20) NULL,
     Email NVARCHAR(100) NULL UNIQUE,
-    Permiso BIT NOT NULL DEFAULT 0, -- 0: operador, 1: administrador
     FechaCreacion DATETIME NOT NULL DEFAULT GETDATE(),
-    Activo BIT NOT NULL DEFAULT 1
 );
 GO
 
 CREATE TABLE ActividadUsuario (
     UsuarioId INT PRIMARY KEY,
     UltimaConexion DATETIME NULL,
-    UltimoTiempoSesion TIME(0) NULL,
-    TiempoTotalTrabajo TIME(0) NULL DEFAULT '00:00:00',
+    UltimoTiempoTrabajo TIME(0) NULL,
+    TiempoTrabajoTotal TIME(0) NULL DEFAULT '00:00:00',
     FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id) ON DELETE CASCADE
 );
 GO
@@ -39,4 +38,60 @@ CREATE TABLE Auditoria (
 );
 GO
 
+INSERT INTO Usuarios (NombreUsuario, Contraseña, Permiso, Nombre, Apellido, Edad, DNI, Telefono, Email, FechaCreacion)
+VALUES
+-- Administradores (antigüedad de 1-2 años)
+('admin', 'admin', 1, 'Vicente', 'Viloni', 51, '38747720', '3514651400', 'vicenteviloni@gmail.com', DATEADD(YEAR, -2, GETDATE())),
+('Mayder', 'facundo', 1, 'Facundo', 'Elgueta', 21, '45473735', '2966403314', 'facuelgueta@gmail.com', DATEADD(YEAR, -1, GETDATE())),
+('Arcorax', 'mariano', 1, 'Mariano', 'Lopez', 30, '38857081', '3513603366', 'marianolopez@gmail.com', DATEADD(MONTH, -18, GETDATE())),
+-- Operadores (antigüedad más recientes)
+('operador1', 'op123', 0, 'Josebas', 'Del monte', 19, '56802275', '1147502920', 'josebasdelmonte@gmail.com', DATEADD(MONTH, -6, GETDATE())),
+('operador2', 'op456', 0, 'Tomas', 'Dominguez', 23, '45060541', '3414558531', 'tomidominguez@gmail.com', DATEADD(MONTH, -3, GETDATE())),
+('operador3', 'op789', 0, 'Esteban', 'Rodriguez', 27, '73850272', '2623442275', 'estebanrodriguez@gmail.com', DATEADD(MONTH, -1, GETDATE()));
+GO
 
+INSERT INTO ActividadUsuario (UsuarioId, UltimaConexion, UltimoTiempoTrabajo, TiempoTrabajoTotal)
+VALUES
+-- Administradores (antigüedad de 1-2 años)
+(1, DATEADD(DAY, -1, GETDATE()), '00:32:15', '14:22:10'),
+(2, DATEADD(DAY, -3, GETDATE()), '00:45:30', '12:15:45'),
+(3, DATEADD(HOUR, -12, GETDATE()), '00:15:22', '9:30:20'),
+-- Operadores (antigüedad más recientes)
+(4, DATEADD(DAY, -5, GETDATE()), '00:30:00', '08:10:30'),
+(5, DATEADD(DAY, -15, GETDATE()), '00:45:15', '02:45:10'),
+(6, GETDATE(), '00:06:00', '12:30:00');
+GO
+
+-- Algunos registros para Auditoria
+INSERT INTO Auditoria (UsuarioId, TipoEvento, FechaHoraEvento, Descripcion)
+VALUES
+-- Eventos del administrador 'admin' (Id: 1)
+(1, 'Login', DATEADD(DAY, -2, GETDATE()), 'El usuario inició sesión en el programa.'),
+(1, 'Administración - Usuarios', DATEADD(DAY, -2, DATEADD(HOUR, 1, GETDATE())), 'El usuario accedió a Administración - Gestión de Usuarios.'),
+(1, 'Gestión de Usuarios - Agregar Usuario', DATEADD(DAY, -2, DATEADD(HOUR, 2, GETDATE())), 'El Administrador admin añadió al usuario operador4.'),
+(1, 'Administración - Auditoria', DATEADD(DAY, -2, DATEADD(HOUR, 3, GETDATE())), 'El usuario accedió a Administración - Auditoria.'),
+(1, 'Logout', DATEADD(DAY, -2, DATEADD(HOUR, 4, GETDATE())), 'El usuario cerró sesión en el programa.'),
+
+-- Eventos del administrador 'Mayder' (Id: 2)
+(2, 'Login', DATEADD(DAY, -3, GETDATE()), 'El usuario inició sesión en el programa.'),
+(2, 'Administración - Usuarios', DATEADD(DAY, -3, DATEADD(HOUR, 1, GETDATE())), 'El usuario accedió a Administración - Gestión de Usuarios.'),
+(2, 'Gestión de Usuarios - Modificar Usuario', DATEADD(DAY, -3, DATEADD(HOUR, 2, GETDATE())), 'El Administrador Mayder modificó al usuario operador1.'),
+(2, 'Logout', DATEADD(DAY, -3, DATEADD(HOUR, 3, GETDATE())), 'El usuario cerró sesión en el programa.'),
+
+-- Eventos del administrador 'Arcorax' (Id: 3)
+(3, 'Login', DATEADD(HOUR, -12, GETDATE()), 'El usuario inició sesión en el programa.'),
+(3, 'Administración - Usuarios', DATEADD(HOUR, -11, GETDATE()), 'El usuario accedió a Administración - Gestión de Usuarios.'),
+(3, 'Gestión de Usuarios - Agregar Usuario', DATEADD(HOUR, -10, GETDATE()), 'El Administrador Arcorax añadió al usuario operador3.'),
+(3, 'Logout', DATEADD(HOUR, -9, GETDATE()), 'El usuario cerró sesión en el programa.'),
+
+-- Eventos del operador1 (Id: 4)
+(4, 'Login', DATEADD(DAY, -1, GETDATE()), 'El usuario inició sesión en el programa.'),
+(4, 'Logout', DATEADD(DAY, -1, DATEADD(HOUR, 2, GETDATE())), 'El usuario cerró sesión en el programa.'),
+
+-- Eventos del operador2 (Id: 5) - antes de ser desactivado
+(5, 'Login', DATEADD(DAY, -4, GETDATE()), 'El usuario inició sesión en el programa.'),
+(5, 'Logout', DATEADD(DAY, -4, DATEADD(HOUR, 2, GETDATE())), 'El usuario cerró sesión en el programa.'),
+
+-- Eventos del operador3 (Id: 6)
+(6, 'Login', DATEADD(HOUR, -2, GETDATE()), 'El usuario inició sesión en el programa.'),
+(6, 'Logout', DATEADD(HOUR, -1, GETDATE()), 'El usuario cerró sesión en el programa.');
