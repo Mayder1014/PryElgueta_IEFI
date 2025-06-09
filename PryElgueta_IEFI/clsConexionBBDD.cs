@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel;
+using Microsoft.Win32;
+using System.Collections;
 
 namespace PryElgueta_IEFI
 {
@@ -321,6 +323,84 @@ namespace PryElgueta_IEFI
                 cmd.ExecuteNonQuery();
             }
             catch ( Exception ex )
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexionBaseDatos.Close();
+            }
+        }
+
+        #endregion
+
+        #region Metodos Tareas...
+
+        public void cargarListaTareas(List<clsTarea> lista)
+        {
+            try
+            {
+                conexionBaseDatos = new SqlConnection(cadenaConexion);
+                conexionBaseDatos.Open();
+
+                string query = "SELECT * FROM Tareas";
+                comandoBaseDatos = new SqlCommand(query, conexionBaseDatos);
+
+                lista.Clear();
+
+                using (SqlDataReader reader = comandoBaseDatos.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        clsTarea registro = new clsTarea(
+                            reader.GetInt32(0),       // Id
+                            reader.GetInt32(1),       // UsuarioId
+                            reader.GetDateTime(2),    // Fecha
+                            reader.GetString(3),      // Tarea
+                            reader.GetString(4),      // Lugar
+                            reader.GetString(5),      // Uniforme
+                            reader.GetString(6),      // Licencia
+                            reader.GetString(7),      // Reclamo
+                            reader.GetString(8)       // Comentario
+                        );
+                        lista.Add(registro);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexionBaseDatos.Close();
+            }
+
+        }
+
+        public void agregarTarea(clsTarea tarea)
+        {
+            try
+            {
+                conexionBaseDatos = new SqlConnection(cadenaConexion);
+                conexionBaseDatos.Open();
+
+                string insertQuery = "INSERT INTO Tareas (UsuarioId, Fecha, Tarea, Lugar, Uniforme, Licencia, Reclamo, Comentario) VALUES " +
+                    "(@usuarioId, @fecha, @tarea, @lugar, @uniforme, @licencia, @reclamo, @comentario)";
+                SqlCommand cmd = new SqlCommand(insertQuery, conexionBaseDatos);
+
+                cmd.Parameters.AddWithValue("@usuarioId", tarea.usuarioId);
+                cmd.Parameters.AddWithValue("@fecha", tarea.fecha);
+                cmd.Parameters.AddWithValue("@tarea", tarea.tarea);
+                cmd.Parameters.AddWithValue("@lugar", tarea.lugar);
+                cmd.Parameters.AddWithValue("@uniforme", tarea.uniforme);
+                cmd.Parameters.AddWithValue("@licencia", tarea.licencia);
+                cmd.Parameters.AddWithValue("@reclamo", tarea.reclamo);
+                cmd.Parameters.AddWithValue("@comentario", tarea.comentario);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

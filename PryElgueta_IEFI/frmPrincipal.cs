@@ -110,6 +110,18 @@ namespace PryElgueta_IEFI
             }
         }
 
+        private void registrarTareasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistrarTareas v = new frmRegistrarTareas();
+            v.ShowDialog();
+        }
+
+        private void historialDeTareasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHistorialTareas v = new frmHistorialTareas();
+            v.ShowDialog();
+        }
+
         #region Logout de usuario...
 
         //Hay 3 ocasiones donde la información del usuario será actualizada y se registrará en auditoria:
@@ -181,6 +193,7 @@ namespace PryElgueta_IEFI
             }
         }
         #endregion
+
 
     }
 }
