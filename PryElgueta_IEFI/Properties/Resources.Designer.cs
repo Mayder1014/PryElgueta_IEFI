@@ -83,9 +83,29 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap administrador__blanco_ {
+            get {
+                object obj = ResourceManager.GetObject("administrador (blanco)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_user {
             get {
                 object obj = ResourceManager.GetObject("delete-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_de_luces_verdes {
+            get {
+                object obj = ResourceManager.GetObject("fondo-de-luces-verdes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace PryElgueta_IEFI.Properties {
         internal static System.Drawing.Bitmap operador {
             get {
                 object obj = ResourceManager.GetObject("operador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap operador__blanco_ {
+            get {
+                object obj = ResourceManager.GetObject("operador (blanco)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

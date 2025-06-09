@@ -194,5 +194,14 @@
   <ItemGroup>
     <None Include="Resources\user-check.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-de-luces-verdes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrador %28blanco%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\operador %28blanco%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

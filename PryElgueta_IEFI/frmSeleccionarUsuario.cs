@@ -166,7 +166,7 @@ namespace PryElgueta_IEFI
                     }
                 }
 
-                imgUsuario.BackgroundImage = Properties.Resources.administrador;
+                imgUsuario.BackgroundImage = Properties.Resources.administrador__blanco_;
                 lblMostrarDatosDelUsuario.Text = $"{user.nombre} {user.apellido}\r\n\r\n" +
                     $"{user.DNI}\r\n\r\n" +
                     $"{user.edad}\r\n\r\n" +
@@ -189,7 +189,7 @@ namespace PryElgueta_IEFI
                 else
                     btnSeleccionarUsuario.BackColor = Color.IndianRed;
 
-                imgUsuario.BackgroundImage = Properties.Resources.operador;
+                imgUsuario.BackgroundImage = Properties.Resources.operador__blanco_;
                 lblMostrarDatosDelUsuario.Text = $"{user.nombre} {user.apellido}\r\n\r\n" +
                     $"{user.DNI}\r\n\r\n" +
                     $"{user.edad}\r\n\r\n" +

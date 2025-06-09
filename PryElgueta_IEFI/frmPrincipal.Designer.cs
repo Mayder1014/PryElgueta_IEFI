@@ -241,6 +241,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.BackgroundImage = global::PryElgueta_IEFI.Properties.Resources.fondo_de_luces_verdes;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(550, 392);
             this.Controls.Add(this.lblMostrarFecha);
             this.Controls.Add(this.mostrarTiempoSesion);

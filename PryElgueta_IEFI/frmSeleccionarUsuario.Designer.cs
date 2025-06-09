@@ -34,10 +34,10 @@
             this.lblMostrarDatosDelUsuario = new System.Windows.Forms.Label();
             this.lblDatosDelUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.imgUsuario = new System.Windows.Forms.PictureBox();
             this.lblSiguienteUsuario = new System.Windows.Forms.Label();
             this.lblAnteriorUsuario = new System.Windows.Forms.Label();
             this.btnSeleccionarUsuario = new System.Windows.Forms.Button();
+            this.imgUsuario = new System.Windows.Forms.PictureBox();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.panelInfoUsuario.SuspendLayout();
@@ -55,7 +55,7 @@
             this.panelInfoUsuario.Controls.Add(this.lblNombreUsuario);
             this.panelInfoUsuario.Controls.Add(this.imgUsuario);
             this.panelInfoUsuario.Location = new System.Drawing.Point(38, 11);
-            this.panelInfoUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInfoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.panelInfoUsuario.Name = "panelInfoUsuario";
             this.panelInfoUsuario.Size = new System.Drawing.Size(666, 255);
             this.panelInfoUsuario.TabIndex = 26;
@@ -127,19 +127,6 @@
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "NOMBRE DEL USUARIO";
             // 
-            // imgUsuario
-            // 
-            this.imgUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.imgUsuario.BackgroundImage = global::PryElgueta_IEFI.Properties.Resources.administrador;
-            this.imgUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.imgUsuario.Location = new System.Drawing.Point(4, 43);
-            this.imgUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.imgUsuario.Name = "imgUsuario";
-            this.imgUsuario.Size = new System.Drawing.Size(159, 167);
-            this.imgUsuario.TabIndex = 0;
-            this.imgUsuario.TabStop = false;
-            // 
             // lblSiguienteUsuario
             // 
             this.lblSiguienteUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -173,13 +160,26 @@
             this.btnSeleccionarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarUsuario.Location = new System.Drawing.Point(293, 279);
-            this.btnSeleccionarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeleccionarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeleccionarUsuario.Name = "btnSeleccionarUsuario";
             this.btnSeleccionarUsuario.Size = new System.Drawing.Size(154, 29);
             this.btnSeleccionarUsuario.TabIndex = 29;
             this.btnSeleccionarUsuario.Text = "Seleccionar Usuario";
             this.btnSeleccionarUsuario.UseVisualStyleBackColor = false;
             this.btnSeleccionarUsuario.Click += new System.EventHandler(this.btnSeleccionarUsuario_Click);
+            // 
+            // imgUsuario
+            // 
+            this.imgUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.imgUsuario.BackgroundImage = global::PryElgueta_IEFI.Properties.Resources.administrador__blanco_;
+            this.imgUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.imgUsuario.Location = new System.Drawing.Point(4, 43);
+            this.imgUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.imgUsuario.Name = "imgUsuario";
+            this.imgUsuario.Size = new System.Drawing.Size(159, 167);
+            this.imgUsuario.TabIndex = 0;
+            this.imgUsuario.TabStop = false;
             // 
             // btnSiguiente
             // 
@@ -190,7 +190,7 @@
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.btnSiguiente.Location = new System.Drawing.Point(676, 280);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(28, 28);
             this.btnSiguiente.TabIndex = 28;
@@ -206,7 +206,7 @@
             this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.btnAtras.Location = new System.Drawing.Point(38, 280);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(28, 28);
             this.btnAtras.TabIndex = 27;
@@ -225,7 +225,7 @@
             this.Controls.Add(this.btnSeleccionarUsuario);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAtras);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSeleccionarUsuario";
             this.Text = "frmSeleccionarUsuario";
             this.Load += new System.EventHandler(this.frmSeleccionarUsuario_Load);

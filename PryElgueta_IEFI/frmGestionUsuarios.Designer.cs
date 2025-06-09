@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionUsuarios));
             this.panelInfoInstrucciones = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblInstrucciones = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
             this.panelOperaciones = new System.Windows.Forms.Panel();
             this.btnEliminarUsuario = new System.Windows.Forms.Button();
@@ -50,28 +50,28 @@
             // panelInfoInstrucciones
             // 
             this.panelInfoInstrucciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.panelInfoInstrucciones.Controls.Add(this.label2);
+            this.panelInfoInstrucciones.Controls.Add(this.lblInstrucciones);
             this.panelInfoInstrucciones.Controls.Add(this.lblNota);
             this.panelInfoInstrucciones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelInfoInstrucciones.Location = new System.Drawing.Point(0, 332);
-            this.panelInfoInstrucciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInfoInstrucciones.Margin = new System.Windows.Forms.Padding(2);
             this.panelInfoInstrucciones.Name = "panelInfoInstrucciones";
             this.panelInfoInstrucciones.Size = new System.Drawing.Size(963, 282);
             this.panelInfoInstrucciones.TabIndex = 7;
             // 
-            // label2
+            // lblInstrucciones
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(6, 91);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(955, 165);
-            this.label2.TabIndex = 15;
-            this.label2.Text = resources.GetString("label2.Text");
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblInstrucciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblInstrucciones.AutoSize = true;
+            this.lblInstrucciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstrucciones.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblInstrucciones.Location = new System.Drawing.Point(6, 91);
+            this.lblInstrucciones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInstrucciones.Name = "lblInstrucciones";
+            this.lblInstrucciones.Size = new System.Drawing.Size(955, 165);
+            this.lblInstrucciones.TabIndex = 15;
+            this.lblInstrucciones.Text = resources.GetString("lblInstrucciones.Text");
+            this.lblInstrucciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblNota
             // 
@@ -96,7 +96,7 @@
             this.panelOperaciones.Controls.Add(this.panelSuperior);
             this.panelOperaciones.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelOperaciones.Location = new System.Drawing.Point(0, 0);
-            this.panelOperaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelOperaciones.Margin = new System.Windows.Forms.Padding(2);
             this.panelOperaciones.Name = "panelOperaciones";
             this.panelOperaciones.Size = new System.Drawing.Size(221, 332);
             this.panelOperaciones.TabIndex = 8;
@@ -110,7 +110,7 @@
             this.btnEliminarUsuario.Image = global::PryElgueta_IEFI.Properties.Resources.delete_user;
             this.btnEliminarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarUsuario.Location = new System.Drawing.Point(0, 192);
-            this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Size = new System.Drawing.Size(221, 43);
             this.btnEliminarUsuario.TabIndex = 16;
@@ -127,7 +127,7 @@
             this.btnModificarUsuario.Image = global::PryElgueta_IEFI.Properties.Resources.user_edit;
             this.btnModificarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificarUsuario.Location = new System.Drawing.Point(0, 149);
-            this.btnModificarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarUsuario.Name = "btnModificarUsuario";
             this.btnModificarUsuario.Size = new System.Drawing.Size(221, 43);
             this.btnModificarUsuario.TabIndex = 15;
@@ -144,7 +144,7 @@
             this.btnAgregarUsuario.Image = global::PryElgueta_IEFI.Properties.Resources.add_user;
             this.btnAgregarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarUsuario.Location = new System.Drawing.Point(0, 106);
-            this.btnAgregarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(221, 43);
             this.btnAgregarUsuario.TabIndex = 10;
@@ -160,7 +160,7 @@
             this.panelSuperior.Controls.Add(this.lblVolverMenuPrincipal);
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSuperior.Margin = new System.Windows.Forms.Padding(2);
             this.panelSuperior.Name = "panelSuperior";
             this.panelSuperior.Size = new System.Drawing.Size(221, 106);
             this.panelSuperior.TabIndex = 9;
@@ -209,7 +209,7 @@
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(221, 0);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(2);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(742, 332);
             this.panelContenedor.TabIndex = 11;
@@ -221,7 +221,7 @@
             this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.Location = new System.Drawing.Point(9, 10);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(29, 30);
             this.btnVolver.TabIndex = 6;
@@ -240,7 +240,7 @@
             this.Controls.Add(this.panelOperaciones);
             this.Controls.Add(this.panelInfoInstrucciones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmGestionUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -268,6 +268,6 @@
         private System.Windows.Forms.Button btnModificarUsuario;
         private System.Windows.Forms.Label lblMostrarUsuarioSeleccionado;
         private System.Windows.Forms.Label lblUsuarioSeleccionado;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblInstrucciones;
     }
 }
