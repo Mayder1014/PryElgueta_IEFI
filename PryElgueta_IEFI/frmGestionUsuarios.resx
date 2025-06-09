@@ -120,14 +120,15 @@
   <data name="label2.Text" xml:space="preserve">
     <value>INSTRUCCIONES:
 
-- Para agregar un usuario, simplemente clickee en la opción "Agregar Usuario" que se encuentra en el apartado de la izquierda y complete los datos que se le solicite.
+- Para agregar un usuario, simplemente clickee en la opción "Agregar Usuario" que se encuentra en el apartado de la izquierda y complete los
+datos que se le solicite.
 
-- Para modificar un usuario, primero debe clickear en la opción "Modificar Usuario" y luego debe de seleccionar el usuario el cual desea modificar. Una vez seleccionado
-el usuario se le indicará el nombre del mismo en la esquina superior izquierda, por último solamente debe marcar los campos que desea modificar del usuario y podrá
-modificar lo que necesite del usuario.
+- Para modificar un usuario, primero debe clickear en la opción "Modificar Usuario" y luego debe de seleccionar el usuario el cual desea modificar. 
+Una vez seleccionado el usuario se le indicará el nombre del mismo en la esquina superior izquierda, por último solamente debe marcar los 
+campos que desea modificar del usuario y podrá modificar lo que necesite del usuario.
 
-- Para eliminar un usuario, debe clickear en la opción "Eliminar Usuario" y luego deberá de seleccionar el usuario al cual quiere eliminar. Está es una decisión importante,
-por lo que se le pedirá una doble confirmación a la hora de clickear en el botón para eliminar al usuario seleccionado.</value>
+- Para eliminar un usuario, debe clickear en la opción "Eliminar Usuario" y luego deberá de seleccionar el usuario al cual quiere eliminar. Está es
+una decisión importante, por lo que se le pedirá una doble confirmación a la hora de clickear en el botón para eliminar al usuario seleccionado.</value>
   </data>
   <data name="lblNota.Text" xml:space="preserve">
     <value>NOTA: Seleccioné la operación a realizar en el apartado que se encuentra a la izquierda. 

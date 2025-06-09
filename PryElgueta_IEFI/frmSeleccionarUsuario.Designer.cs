@@ -54,10 +54,10 @@
             this.panelInfoUsuario.Controls.Add(this.lblDatosDelUsuario);
             this.panelInfoUsuario.Controls.Add(this.lblNombreUsuario);
             this.panelInfoUsuario.Controls.Add(this.imgUsuario);
-            this.panelInfoUsuario.Location = new System.Drawing.Point(50, 13);
-            this.panelInfoUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelInfoUsuario.Location = new System.Drawing.Point(38, 11);
+            this.panelInfoUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelInfoUsuario.Name = "panelInfoUsuario";
-            this.panelInfoUsuario.Size = new System.Drawing.Size(888, 314);
+            this.panelInfoUsuario.Size = new System.Drawing.Size(666, 255);
             this.panelInfoUsuario.TabIndex = 26;
             // 
             // lblMostrarActividadUsuario
@@ -66,9 +66,10 @@
             this.lblMostrarActividadUsuario.AutoSize = true;
             this.lblMostrarActividadUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMostrarActividadUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMostrarActividadUsuario.Location = new System.Drawing.Point(729, 71);
+            this.lblMostrarActividadUsuario.Location = new System.Drawing.Point(546, 57);
+            this.lblMostrarActividadUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMostrarActividadUsuario.Name = "lblMostrarActividadUsuario";
-            this.lblMostrarActividadUsuario.Size = new System.Drawing.Size(142, 80);
+            this.lblMostrarActividadUsuario.Size = new System.Drawing.Size(118, 65);
             this.lblMostrarActividadUsuario.TabIndex = 5;
             this.lblMostrarActividadUsuario.Text = "dd/MM/yyyy hh/mm/ss\r\n\r\nhh/mm/ss\r\n\r\nhh/mm/ss";
             // 
@@ -78,9 +79,10 @@
             this.lblActividadUsuario.AutoSize = true;
             this.lblActividadUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActividadUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblActividadUsuario.Location = new System.Drawing.Point(564, 71);
+            this.lblActividadUsuario.Location = new System.Drawing.Point(422, 57);
+            this.lblActividadUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActividadUsuario.Name = "lblActividadUsuario";
-            this.lblActividadUsuario.Size = new System.Drawing.Size(149, 80);
+            this.lblActividadUsuario.Size = new System.Drawing.Size(125, 65);
             this.lblActividadUsuario.TabIndex = 4;
             this.lblActividadUsuario.Text = "- Fecha de creación:\r\n\r\n- Última Conexión:\r\n\r\n- Total trabajado:";
             // 
@@ -90,9 +92,10 @@
             this.lblMostrarDatosDelUsuario.AutoSize = true;
             this.lblMostrarDatosDelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMostrarDatosDelUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMostrarDatosDelUsuario.Location = new System.Drawing.Point(395, 71);
+            this.lblMostrarDatosDelUsuario.Location = new System.Drawing.Point(295, 57);
+            this.lblMostrarDatosDelUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMostrarDatosDelUsuario.Name = "lblMostrarDatosDelUsuario";
-            this.lblMostrarDatosDelUsuario.Size = new System.Drawing.Size(152, 208);
+            this.lblMostrarDatosDelUsuario.Size = new System.Drawing.Size(119, 169);
             this.lblMostrarDatosDelUsuario.TabIndex = 3;
             this.lblMostrarDatosDelUsuario.Text = "Nombre/Apellido\r\n\r\nXXXXXXXX\r\n\r\n99\r\n\r\nAdministrador/Operador\r\n\r\nasdfghi@gmail.com\r" +
     "\n\r\n2966202224\r\n\r\nxxxxxxxxxxxxxxx";
@@ -103,9 +106,10 @@
             this.lblDatosDelUsuario.AutoSize = true;
             this.lblDatosDelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatosDelUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDatosDelUsuario.Location = new System.Drawing.Point(234, 71);
+            this.lblDatosDelUsuario.Location = new System.Drawing.Point(175, 57);
+            this.lblDatosDelUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDatosDelUsuario.Name = "lblDatosDelUsuario";
-            this.lblDatosDelUsuario.Size = new System.Drawing.Size(149, 208);
+            this.lblDatosDelUsuario.Size = new System.Drawing.Size(121, 169);
             this.lblDatosDelUsuario.TabIndex = 2;
             this.lblDatosDelUsuario.Text = "- Nombre y Apellido:\r\n\r\n- DNI:\r\n\r\n- Edad:\r\n\r\n- Rol:\r\n\r\n- Email:\r\n\r\n- Teléfono\r\n\r\n" +
     "- Contraseña:\r\n";
@@ -116,9 +120,10 @@
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(232, 34);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(173, 27);
+            this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(220, 20);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(183, 17);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "NOMBRE DEL USUARIO";
             // 
@@ -128,10 +133,10 @@
             this.imgUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.imgUsuario.BackgroundImage = global::PryElgueta_IEFI.Properties.Resources.administrador;
             this.imgUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.imgUsuario.Location = new System.Drawing.Point(6, 53);
-            this.imgUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.imgUsuario.Location = new System.Drawing.Point(4, 43);
+            this.imgUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.imgUsuario.Name = "imgUsuario";
-            this.imgUsuario.Size = new System.Drawing.Size(212, 205);
+            this.imgUsuario.Size = new System.Drawing.Size(159, 167);
             this.imgUsuario.TabIndex = 0;
             this.imgUsuario.TabStop = false;
             // 
@@ -141,9 +146,10 @@
             this.lblSiguienteUsuario.AutoSize = true;
             this.lblSiguienteUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSiguienteUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSiguienteUsuario.Location = new System.Drawing.Point(820, 353);
+            this.lblSiguienteUsuario.Location = new System.Drawing.Point(615, 287);
+            this.lblSiguienteUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSiguienteUsuario.Name = "lblSiguienteUsuario";
-            this.lblSiguienteUsuario.Size = new System.Drawing.Size(72, 16);
+            this.lblSiguienteUsuario.Size = new System.Drawing.Size(60, 13);
             this.lblSiguienteUsuario.TabIndex = 31;
             this.lblSiguienteUsuario.Text = "Siguiente";
             // 
@@ -153,9 +159,10 @@
             this.lblAnteriorUsuario.AutoSize = true;
             this.lblAnteriorUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnteriorUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblAnteriorUsuario.Location = new System.Drawing.Point(96, 353);
+            this.lblAnteriorUsuario.Location = new System.Drawing.Point(72, 287);
+            this.lblAnteriorUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnteriorUsuario.Name = "lblAnteriorUsuario";
-            this.lblAnteriorUsuario.Size = new System.Drawing.Size(61, 16);
+            this.lblAnteriorUsuario.Size = new System.Drawing.Size(51, 13);
             this.lblAnteriorUsuario.TabIndex = 30;
             this.lblAnteriorUsuario.Text = "Anterior";
             // 
@@ -165,10 +172,10 @@
             this.btnSeleccionarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(180)))), ((int)(((byte)(98)))));
             this.btnSeleccionarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionarUsuario.Location = new System.Drawing.Point(391, 343);
-            this.btnSeleccionarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSeleccionarUsuario.Location = new System.Drawing.Point(293, 279);
+            this.btnSeleccionarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSeleccionarUsuario.Name = "btnSeleccionarUsuario";
-            this.btnSeleccionarUsuario.Size = new System.Drawing.Size(206, 36);
+            this.btnSeleccionarUsuario.Size = new System.Drawing.Size(154, 29);
             this.btnSeleccionarUsuario.TabIndex = 29;
             this.btnSeleccionarUsuario.Text = "Seleccionar Usuario";
             this.btnSeleccionarUsuario.UseVisualStyleBackColor = false;
@@ -182,10 +189,10 @@
             this.btnSiguiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnSiguiente.Location = new System.Drawing.Point(901, 344);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSiguiente.Location = new System.Drawing.Point(676, 280);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(37, 34);
+            this.btnSiguiente.Size = new System.Drawing.Size(28, 28);
             this.btnSiguiente.TabIndex = 28;
             this.btnSiguiente.UseVisualStyleBackColor = false;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
@@ -198,26 +205,27 @@
             this.btnAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnAtras.Location = new System.Drawing.Point(50, 344);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAtras.Location = new System.Drawing.Point(38, 280);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(37, 34);
+            this.btnAtras.Size = new System.Drawing.Size(28, 28);
             this.btnAtras.TabIndex = 27;
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // frmSeleccionarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.ClientSize = new System.Drawing.Size(989, 393);
+            this.ClientSize = new System.Drawing.Size(742, 319);
             this.Controls.Add(this.panelInfoUsuario);
             this.Controls.Add(this.lblSiguienteUsuario);
             this.Controls.Add(this.lblAnteriorUsuario);
             this.Controls.Add(this.btnSeleccionarUsuario);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAtras);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmSeleccionarUsuario";
             this.Text = "frmSeleccionarUsuario";
             this.Load += new System.EventHandler(this.frmSeleccionarUsuario_Load);

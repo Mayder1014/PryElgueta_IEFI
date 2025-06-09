@@ -31,6 +31,7 @@ namespace PryElgueta_IEFI
             habilitarDeshabilitarBotonSeleccionarQuitar();
 
             dtpFecha.MaxDate = DateTime.Now;
+            dtpFecha.Value = DateTime.Now;
 
             Button[] botones = new Button[] { btnAgregarTarea, btnSeleccionarTarea, btnGuardarDetalles, btnRegistrar }; 
 
@@ -40,6 +41,10 @@ namespace PryElgueta_IEFI
             }
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         #region Eventos Importantes - Agregar, Quitar, Seleccionar, GuardarDetalles, Registrar Tareas...
 
