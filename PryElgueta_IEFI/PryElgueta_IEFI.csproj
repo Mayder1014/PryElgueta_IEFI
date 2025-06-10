@@ -150,28 +150,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hide.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\show.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\go-back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\administrador.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\operador.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\left.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\right.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\usuarioLogin.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\userLogin.png" />
@@ -195,13 +180,40 @@
     <None Include="Resources\user-check.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fondo-de-luces-verdes.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\administrador %28blanco%29.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\operador %28blanco%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registrarTareas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historialTareas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoGestionUsuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoAuditoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userLogout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tareasRH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administraciónUA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean Dynamic Green Lights Background - Editado.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

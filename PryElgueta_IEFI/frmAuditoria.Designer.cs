@@ -69,7 +69,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMostrar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMostrar.Location = new System.Drawing.Point(12, 111);
+            this.dgvMostrar.Location = new System.Drawing.Point(12, 131);
             this.dgvMostrar.MultiSelect = false;
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
@@ -86,7 +86,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Control;
             this.dgvMostrar.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMostrar.RowTemplate.Height = 24;
-            this.dgvMostrar.Size = new System.Drawing.Size(1166, 648);
+            this.dgvMostrar.Size = new System.Drawing.Size(1166, 667);
             this.dgvMostrar.TabIndex = 0;
             // 
             // mrcElegirOpción
@@ -97,9 +97,9 @@
             this.mrcElegirOpción.Controls.Add(this.optEventos);
             this.mrcElegirOpción.Controls.Add(this.optGeneral);
             this.mrcElegirOpción.ForeColor = System.Drawing.SystemColors.Control;
-            this.mrcElegirOpción.Location = new System.Drawing.Point(253, 12);
+            this.mrcElegirOpción.Location = new System.Drawing.Point(191, 20);
             this.mrcElegirOpción.Name = "mrcElegirOpción";
-            this.mrcElegirOpción.Size = new System.Drawing.Size(685, 83);
+            this.mrcElegirOpción.Size = new System.Drawing.Size(806, 85);
             this.mrcElegirOpción.TabIndex = 1;
             this.mrcElegirOpción.TabStop = false;
             this.mrcElegirOpción.Text = "Elegir tipo de auditoria...";
@@ -109,7 +109,7 @@
             this.optInfoUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.optInfoUsuarios.AutoSize = true;
             this.optInfoUsuarios.ForeColor = System.Drawing.SystemColors.Control;
-            this.optInfoUsuarios.Location = new System.Drawing.Point(531, 38);
+            this.optInfoUsuarios.Location = new System.Drawing.Point(558, 37);
             this.optInfoUsuarios.Name = "optInfoUsuarios";
             this.optInfoUsuarios.Size = new System.Drawing.Size(125, 20);
             this.optInfoUsuarios.TabIndex = 2;
@@ -123,7 +123,7 @@
             this.optEventos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.optEventos.AutoSize = true;
             this.optEventos.ForeColor = System.Drawing.SystemColors.Control;
-            this.optEventos.Location = new System.Drawing.Point(286, 38);
+            this.optEventos.Location = new System.Drawing.Point(353, 37);
             this.optEventos.Name = "optEventos";
             this.optEventos.Size = new System.Drawing.Size(77, 20);
             this.optEventos.TabIndex = 1;
@@ -138,7 +138,7 @@
             this.optGeneral.AutoSize = true;
             this.optGeneral.Checked = true;
             this.optGeneral.ForeColor = System.Drawing.SystemColors.Control;
-            this.optGeneral.Location = new System.Drawing.Point(21, 38);
+            this.optGeneral.Location = new System.Drawing.Point(117, 37);
             this.optGeneral.Name = "optGeneral";
             this.optGeneral.Size = new System.Drawing.Size(76, 20);
             this.optGeneral.TabIndex = 0;
@@ -166,7 +166,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.ClientSize = new System.Drawing.Size(1190, 771);
+            this.ClientSize = new System.Drawing.Size(1190, 810);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.mrcElegirOpción);
             this.Controls.Add(this.dgvMostrar);

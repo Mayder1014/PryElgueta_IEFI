@@ -170,7 +170,7 @@ namespace PryElgueta_IEFI
                     conexion.agregarTarea(tarea);
                 });
 
-                string evento = "Registro de Tareas";
+                string evento = "Tareas - Registrar Tareas";
                 string descripcion = $"El usuario {clsUsuario.usuarioLogueado.nombreUsuario} ha registrado tareas.";
 
                 clsRegistro registro = new clsRegistro(0, clsUsuario.usuarioLogueado.id, evento, DateTime.Now, descripcion);

@@ -293,8 +293,6 @@ namespace PryElgueta_IEFI
             {
                 cmbSeleccionarDato.Items.Add(dato);
             }
-
-
         }
 
         public void habilitarControlesBusquedaEspecifica()

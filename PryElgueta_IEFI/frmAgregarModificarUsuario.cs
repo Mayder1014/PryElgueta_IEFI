@@ -47,6 +47,7 @@ namespace PryElgueta_IEFI
             else
             {
                 btnAgregarModificar.Text = "Enviar modificaciones"; btnAgregarModificar.BackColor = Color.SteelBlue;
+                lblCompletarCampos.Text = "Por favor, seleccione los campos a modificar y complete los campos correspondientes:";
                 evento = "Gestión de Usuarios - Modificar Usuario";
                 mostrarOpcionesDeModificacion();
                 cambiarColorCampos();
@@ -54,6 +55,8 @@ namespace PryElgueta_IEFI
             }
 
         }
+
+        #region Evento btnAgregarModificar...
 
         private void btnAgregarModificar_Click(object sender, EventArgs e)
         {
@@ -120,6 +123,8 @@ namespace PryElgueta_IEFI
             }
 
         }
+
+        #endregion
 
         #region Otros eventos...
 

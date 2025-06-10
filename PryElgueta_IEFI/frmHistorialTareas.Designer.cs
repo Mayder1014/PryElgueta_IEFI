@@ -212,9 +212,9 @@
             this.mrcBusquedaEspecifica.Controls.Add(this.label2);
             this.mrcBusquedaEspecifica.Controls.Add(this.label3);
             this.mrcBusquedaEspecifica.Controls.Add(this.cmbTipoFiltrado);
-            this.mrcBusquedaEspecifica.Controls.Add(this.cmbSeleccionarDato);
             this.mrcBusquedaEspecifica.Controls.Add(this.txtIngresarDato);
             this.mrcBusquedaEspecifica.Controls.Add(this.dtpFecha);
+            this.mrcBusquedaEspecifica.Controls.Add(this.cmbSeleccionarDato);
             this.mrcBusquedaEspecifica.ForeColor = System.Drawing.SystemColors.Control;
             this.mrcBusquedaEspecifica.Location = new System.Drawing.Point(630, 12);
             this.mrcBusquedaEspecifica.Name = "mrcBusquedaEspecifica";

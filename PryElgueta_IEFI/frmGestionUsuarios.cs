@@ -31,6 +31,8 @@ namespace PryElgueta_IEFI
 
         }
 
+        #region Eventos - btnVolver, Agregar, Modificar, Eliminar Usuario.
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -58,109 +60,9 @@ namespace PryElgueta_IEFI
             abrirFormulario(v);
         }
 
-        #region Metodos...
-
-        /*
-        public void habilitarDeshabilitarBotones()
-        {
-            var user = lstUsuarios.lstUsuarios[i];
-
-            //Habilitar o deshabilitar textBox y botón Agregar Usuario
-            if (txtNombreAgregar.Text == "" || string.IsNullOrWhiteSpace(txtNombreAgregar.Text))
-            {
-                txtContraseñaAgregar.Enabled = false; txtContraseñaAgregar.BackColor = Color.Gray;
-                btnAgregarUsuario.Enabled = false;
-            }
-            else
-            {
-                txtContraseñaAgregar.Enabled = true; txtContraseñaAgregar.BackColor = SystemColors.Control;
-                if (txtContraseñaAgregar.Text == "" || string.IsNullOrWhiteSpace(txtContraseñaAgregar.Text))
-                    btnAgregarUsuario.Enabled = false;
-                else
-                    btnAgregarUsuario.Enabled = true;
-            }
-
-            //Habilitar o deshabilitar textBoxes/radioButtons y botón Modificar Usuario
-            if (chkNuevoNombre.Checked)
-                txtNombreModificar.Enabled = true;
-            else
-            {
-                txtNombreModificar.Enabled = false; txtNombreModificar.Text = "";
-            }
-
-            if (chkNuevaContraseña.Checked)
-                txtContraseñaModificar.Enabled = true;
-            else
-            {
-                txtContraseñaModificar.Enabled = false; txtContraseñaModificar.Text = "";
-            }
-
-            if (chkEstadoUsuario.Checked)
-            {
-                if (clsUsuario.usuarioLogueado.id != user.id)
-                {
-                    optActivo.Enabled = true; optInactivo.Enabled = true;
-                }
-            }
-            else
-            {
-                optActivo.Enabled = false; optInactivo.Enabled = false;
-                optActivo.Checked = false; optInactivo.Checked = false;
-            }
-
-            //Habilitar o deshabilitar botones
-            if (user.permiso == 1)
-            {
-                btnSeleccionarUsuario.Enabled = false;
-            }
-            else
-            {
-                btnSeleccionarUsuario.Enabled = true;
-            }
-
-            if (txtNombreModificar.Text != "" || txtContraseñaModificar.Text != "" || optActivo.Checked != false || optInactivo.Checked != false)
-            {
-                btnSeleccionarUsuario.Enabled = true;
-
-                //Pregunta si el usuario mostrado es administrador, si lo es, pregunta si es el administrador logueado
-                if (user.permiso == 1)
-                {
-                    if (user.id == clsUsuario.usuarioLogueado.id)
-                        btnSeleccionarUsuario.Enabled = true;
-                    else
-                        btnSeleccionarUsuario.Enabled = false;
-                }
-            }
-            else
-            {
-                btnSeleccionarUsuario.Enabled = false;
-            }
-        }
-
-        public void cambiarColorDeBoton()
-        {
-            //Agregar -----------------------------------------------
-            if (btnAgregarUsuario.Enabled != true)
-                btnAgregarUsuario.BackColor = Color.Gray;
-            else
-                btnAgregarUsuario.BackColor = Color.MediumSeaGreen;
-
-            //Modificar ---------------------------------------------
-            if (btnSeleccionarUsuario.Enabled != true)
-                btnSeleccionarUsuario.BackColor = Color.Gray;
-            else
-                btnSeleccionarUsuario.BackColor = Color.SteelBlue;
-
-            //Eliminar ----------------------------------------------
-            if (btnSeleccionarUsuario.Enabled != true)
-                btnSeleccionarUsuario.BackColor = Color.Gray;
-            else
-                btnSeleccionarUsuario.BackColor = Color.IndianRed;
-        }
-        */
-
         #endregion
 
+        #region Metodos...
 
         //Este metodo abrira el formulario para agregar y/o modificar usuario.
         private Form formActivo = null;
@@ -179,6 +81,8 @@ namespace PryElgueta_IEFI
             formulario.BringToFront();
             formulario.Show();
         }
+
+        #endregion
 
     }
 }

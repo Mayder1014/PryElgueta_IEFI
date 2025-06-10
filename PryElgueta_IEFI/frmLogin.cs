@@ -54,6 +54,7 @@ namespace PryElgueta_IEFI
                 MessageBox.Show($"¡Bienvenido {clsUsuario.usuarioLogueado.nombreUsuario}!", "LOGIN EXITOSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 string evento = "Login"; //Tipo de evento a registrar
 
+                frmPrincipal.formPrincipal.WindowState = FormWindowState.Maximized;
                 frmPrincipal.formPrincipal.Show();
 
                 //Si el usuario logueado es operador, se le ocultará el menu de Administración, Auditoria y Usuarios.

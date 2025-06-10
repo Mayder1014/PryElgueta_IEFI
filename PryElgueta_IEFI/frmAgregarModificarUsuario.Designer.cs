@@ -39,7 +39,7 @@
             this.chkContraseña = new System.Windows.Forms.CheckBox();
             this.chkNombreUsuario = new System.Windows.Forms.CheckBox();
             this.lblCamposAModificar = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblCompletarCampos = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -74,7 +74,7 @@
             this.panelAgregarModificar.Controls.Add(this.chkContraseña);
             this.panelAgregarModificar.Controls.Add(this.chkNombreUsuario);
             this.panelAgregarModificar.Controls.Add(this.lblCamposAModificar);
-            this.panelAgregarModificar.Controls.Add(this.label13);
+            this.panelAgregarModificar.Controls.Add(this.lblCompletarCampos);
             this.panelAgregarModificar.Controls.Add(this.txtDNI);
             this.panelAgregarModificar.Controls.Add(this.label12);
             this.panelAgregarModificar.Controls.Add(this.txtEmail);
@@ -245,17 +245,17 @@
             this.lblCamposAModificar.Text = ">> Seleccioné los campos a modificar del Usuario:";
             this.lblCamposAModificar.Visible = false;
             // 
-            // label13
+            // lblCompletarCampos
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(45, 41);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(635, 20);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Por favor, complete los siguientes campos para Agregar al nuevo Usuario:";
+            this.lblCompletarCampos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCompletarCampos.AutoSize = true;
+            this.lblCompletarCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompletarCampos.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCompletarCampos.Location = new System.Drawing.Point(45, 41);
+            this.lblCompletarCampos.Name = "lblCompletarCampos";
+            this.lblCompletarCampos.Size = new System.Drawing.Size(635, 20);
+            this.lblCompletarCampos.TabIndex = 22;
+            this.lblCompletarCampos.Text = "Por favor, complete los siguientes campos para Agregar al nuevo Usuario:";
             // 
             // txtDNI
             // 
@@ -479,7 +479,7 @@
         private System.Windows.Forms.CheckBox chkContraseña;
         private System.Windows.Forms.CheckBox chkNombreUsuario;
         private System.Windows.Forms.Label lblCamposAModificar;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblCompletarCampos;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtEmail;

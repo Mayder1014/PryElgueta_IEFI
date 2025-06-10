@@ -73,9 +73,9 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap administrador {
+        internal static System.Drawing.Bitmap administraciónUA {
             get {
-                object obj = ResourceManager.GetObject("administrador", resourceCulture);
+                object obj = ResourceManager.GetObject("administraciónUA", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,6 +93,16 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Clean_Dynamic_Green_Lights_Background___Editado {
+            get {
+                object obj = ResourceManager.GetObject("Clean Dynamic Green Lights Background - Editado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_user {
             get {
                 object obj = ResourceManager.GetObject("delete-user", resourceCulture);
@@ -103,9 +113,9 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fondo_de_luces_verdes {
+        internal static System.Drawing.Bitmap exit {
             get {
-                object obj = ResourceManager.GetObject("fondo-de-luces-verdes", resourceCulture);
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +133,9 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hide {
+        internal static System.Drawing.Bitmap hideWhite {
             get {
-                object obj = ResourceManager.GetObject("hide", resourceCulture);
+                object obj = ResourceManager.GetObject("hideWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +143,29 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hideWhite {
+        internal static System.Drawing.Bitmap historialTareas {
             get {
-                object obj = ResourceManager.GetObject("hideWhite", resourceCulture);
+                object obj = ResourceManager.GetObject("historialTareas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconoAuditoria {
+            get {
+                object obj = ResourceManager.GetObject("iconoAuditoria", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconoGestionUsuarios {
+            get {
+                object obj = ResourceManager.GetObject("iconoGestionUsuarios", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +183,9 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap operador {
+        internal static System.Drawing.Bitmap opciones {
             get {
-                object obj = ResourceManager.GetObject("operador", resourceCulture);
+                object obj = ResourceManager.GetObject("opciones", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +203,16 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap registrarTareas {
+            get {
+                object obj = ResourceManager.GetObject("registrarTareas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap right {
             get {
                 object obj = ResourceManager.GetObject("right", resourceCulture);
@@ -183,9 +223,9 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap show {
+        internal static System.Drawing.Bitmap showWhite {
             get {
-                object obj = ResourceManager.GetObject("show", resourceCulture);
+                object obj = ResourceManager.GetObject("showWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +233,9 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap showWhite {
+        internal static System.Drawing.Bitmap tareasRH {
             get {
-                object obj = ResourceManager.GetObject("showWhite", resourceCulture);
+                object obj = ResourceManager.GetObject("tareasRH", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +273,9 @@ namespace PryElgueta_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap usuarioLogin {
+        internal static System.Drawing.Bitmap userLogout {
             get {
-                object obj = ResourceManager.GetObject("usuarioLogin", resourceCulture);
+                object obj = ResourceManager.GetObject("userLogout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

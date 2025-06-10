@@ -42,6 +42,8 @@ namespace PryElgueta_IEFI
             mostrarUsuario();
         }
 
+        #region Eventos Importantes - btnSiguiente, Atras, Seleccionar y Eliminar Usuario...
+
         private void btnAtras_Click(object sender, EventArgs e)
         {
             i--;
@@ -110,6 +112,10 @@ namespace PryElgueta_IEFI
                 abrirFormulario(v);
             }
         }
+
+        #endregion
+
+        #region Metodos...
 
         public void habilitarAtrasYSiguiente()
         {
@@ -220,6 +226,7 @@ namespace PryElgueta_IEFI
             formulario.Show();
         }
 
+        #endregion
 
     }
 }

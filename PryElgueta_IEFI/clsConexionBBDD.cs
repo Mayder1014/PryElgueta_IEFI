@@ -244,7 +244,6 @@ namespace PryElgueta_IEFI
 
         #endregion
 
-
         #region Metodos Auditoria...
         public void cargarListaAuditoria(clsAuditoria lista)
         {
